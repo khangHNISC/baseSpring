@@ -1,0 +1,25 @@
+package com.example.base;
+
+import com.example.base.service.MyService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+@SpringBootTest("service.message=Hello")
+class LibraryApplicationTests {
+
+    @Autowired
+    private MyService myService;
+
+    @Test
+    public void contextLoads() {
+        assertThat(myService.message()).isNotNull();
+    }
+
+    @SpringBootApplication
+    static class TestConfiguration {
+    }
+}
