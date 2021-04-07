@@ -1,6 +1,6 @@
 package com.example.base.controller;
 
-import com.example.base.service1.GetForm;
+import com.example.base.service1.PostForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,13 +23,13 @@ class BindingResultController implements WebMvcConfigurer {
     }
 
     @GetMapping("/bindingResult")
-    public String showForm(@ModelAttribute("form") GetForm form) {
+    public String showForm(@ModelAttribute("form") PostForm form) {
         //this @ModelAttribute is required
         return "form";
     }
 
     @PostMapping("/bindingResult")
-    public String checkPersonInfo(@Valid @ModelAttribute("form") GetForm form, BindingResult bindingResult) {
+    public String checkPersonInfo(@Valid @ModelAttribute("form") PostForm form, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "form";
         }

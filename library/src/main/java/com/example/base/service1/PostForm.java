@@ -12,9 +12,8 @@ import javax.validation.constraints.Size;
  * Created by khangld5 on Apr 07, 2021
  */
 @Getter
-@Setter
 @ToString
-public class GetForm {
+public class PostForm {
     @NotNull
     @Size(min = 2, max = 30)
     private String name;
