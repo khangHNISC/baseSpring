@@ -20,11 +20,11 @@ class AJaxCallRestControllerTest {
 
     @Test
     @SneakyThrows
-    void testAjaxGetCall(){
+    void testAjaxGetCall() {
         LinkedMultiValueMap<String, String> requestParams = new LinkedMultiValueMap<>();
         requestParams.add("id", "10");
         requestParams.add("content", "OI GIOI OI");
-        this.mvc.perform(get("/ajaxCall/get")
+        this.mvc.perform(get("/ajax/get")
                 .params(requestParams))
                 .andDo(print())
                 .andExpect(status().isOk())

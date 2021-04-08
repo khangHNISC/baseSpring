@@ -2,7 +2,7 @@
 //script src does not include /static
 $(document).ready(function() {
     $.ajax({
-        url: "/ajaxCall/get",
+        url: "/ajax/get",
         type: "get",
         data: {
             id: 10,
