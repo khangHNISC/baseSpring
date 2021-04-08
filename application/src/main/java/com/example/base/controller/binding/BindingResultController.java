@@ -22,14 +22,14 @@ public class BindingResultController implements WebMvcConfigurer {
     @GetMapping("/binding")
     public String showForm(@ModelAttribute("form") PostForm postForm) {
         //@ModelAttribute = model.addAttribute("form", new PostForm())
-        return "form";
+        return "binding/form";
     }
 
     //this can apply to get mapping
     @PostMapping("/binding")
     public String checkPersonInfo(@Valid @ModelAttribute("form") PostForm postForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "form";
+            return "binding/form";
         }
         return "redirect:/results";
     }
