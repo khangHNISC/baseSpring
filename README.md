@@ -1,3 +1,3 @@
 # baseSpring
 
-A playground for Spring project
+A playground for Spring projects
