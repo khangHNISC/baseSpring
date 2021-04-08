@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+<form action="#" th:action="@{/flowGet}" th:object="${form}" method="post">
+    <table>
+        <tr>
+            <td>FromDate: </td>
+            <td><input type="text" th:field="*{fromDate}"/></td>
+            <td th:if="${#fields.hasErrors('fromDate')}" th:errors="*{fromDate}">Name Error</td>
+        </tr>
+        <tr>
+            <td>ToDate: </td>
+            <td><input type="text" th:field="*{toDate}"/></td>
+            <td th:if="${#fields.hasErrors('toDate')}" th:errors="*{toDate}">Age Error</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+    <div th:if="${#fields.hasGlobalErrors()}">
+        <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+    </div>
+</form>
+</body>
+</html>

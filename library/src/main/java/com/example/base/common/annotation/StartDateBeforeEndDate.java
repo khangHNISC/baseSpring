@@ -1,4 +1,4 @@
-package com.example.common.annotation;
+package com.example.base.common.annotation;
 
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.PropertyAccessorFactory;
@@ -30,7 +30,7 @@ public @interface StartDateBeforeEndDate {
 
     String endDate();
 
-    String message() default "{start date must before end date}";
+    String message() default "Start date must before End date";
 
     Class<?>[] groups() default {};
 

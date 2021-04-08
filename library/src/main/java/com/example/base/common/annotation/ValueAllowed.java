@@ -1,4 +1,4 @@
-package com.example.common.annotation;
+package com.example.base.common.annotation;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanWrapper;

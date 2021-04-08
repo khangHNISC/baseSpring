@@ -1,4 +1,4 @@
-package com.example.common.annotation;
+package com.example.base.common.annotation;
 
 /**
  * Created by khangld5 on Apr 08, 2021
