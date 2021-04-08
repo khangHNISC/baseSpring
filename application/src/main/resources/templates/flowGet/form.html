@@ -14,6 +14,11 @@
             <td th:if="${#fields.hasErrors('toDate')}" th:errors="*{toDate}">Age Error</td>
         </tr>
         <tr>
+            <td>ENUM: </td>
+            <td><input type="text" th:field="*{simpleEnum}"/></td>
+            <td th:if="${#fields.hasErrors('simpleEnum')}" th:errors="*{simpleEnum}">simpleEnum Error</td>
+        </tr>
+        <tr>
             <td>
                 <button type="submit">Submit</button>
             </td>
