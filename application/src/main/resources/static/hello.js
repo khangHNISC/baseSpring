@@ -1,15 +1,12 @@
 //this js file must be inside /static
 //script src does not include /static
-$(document).ready(function() {
-    $.ajax({
+$(document).ready(function () {
+    $.get({
         url: "/ajax/get",
-        type: "get",
         data: {
-            id: 10,
+            id: 15,
             content: "OI GIOI OI"
         },
-        contentType: "application/json",
-        dataType: 'json',
         success: function (data) {
             $('.greeting-id').append(data.id);
             $('.greeting-content').append(data.content);
