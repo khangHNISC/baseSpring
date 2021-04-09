@@ -3,6 +3,7 @@ package com.example.base.common.config;
 import com.example.base.common.conversion.StringToEnumConverter;
 import com.example.base.common.conversion.ValueToEnumConverter;
 import com.example.base.common.conversion.WithValue;
+import com.example.base.common.formatter.CurrencyAnnotationFormatter;
 import lombok.NonNull;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
@@ -26,5 +27,6 @@ public class WebMVCConfig implements WebMvcConfigurer {
                         : new StringToEnumConverter<>(targetType);
             }
         });
+        registry.addFormatterForFieldAnnotation(new CurrencyAnnotationFormatter());
     }
 }

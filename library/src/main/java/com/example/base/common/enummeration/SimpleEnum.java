@@ -1,6 +1,7 @@
 package com.example.base.common.enummeration;
 
 import com.example.base.common.conversion.WithValue;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -9,17 +10,13 @@ import lombok.ToString;
  */
 @Getter
 @ToString
+@AllArgsConstructor
 public enum SimpleEnum implements WithValue {
     ALL(0, "--ALL--"),
     SIMPLE1(1, "SIMPLE1");
 
     int code;
     String description;
-
-    SimpleEnum(int code, String description) {
-        this.code = code;
-        this.description = description;
-    }
 
     @Override
     public int withValue() {

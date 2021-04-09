@@ -22,7 +22,6 @@ public class WebController1 {
         return "flowGet/form";
     }
 
-    //this can apply to get mapping
     @PostMapping
     public String checkPersonInfo(@Valid @ModelAttribute("form") AdvanceGetForm form, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
