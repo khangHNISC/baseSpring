@@ -11,15 +11,18 @@ import lombok.ToString;
 @Getter
 @ToString
 @AllArgsConstructor
-public enum SimpleEnum implements WithValue {
+public enum SimpleEnum {
     ALL(0, "--ALL--"),
     SIMPLE1(1, "SIMPLE1");
 
     int code;
     String description;
 
-    @Override
-    public int withValue() {
-        return code;
+    @SuppressWarnings("unused")
+    public static SimpleEnum fromId(int code){
+        for(SimpleEnum e: values()){
+            if(e.code == code) return e;
+        }
+        throw new IllegalStateException("in valid code for enum");
     }
 }

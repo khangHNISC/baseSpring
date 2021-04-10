@@ -1,5 +1,6 @@
 package com.example.base.service1;
 
+import com.example.base.common.annotation.EnumFromId;
 import com.example.base.common.annotation.StartDateBeforeEndDate;
 import com.example.base.common.enummeration.SimpleEnum;
 import lombok.Value;
@@ -21,5 +22,6 @@ public class AdvanceGetForm {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     Date toDate;
     @NotNull
+    @EnumFromId
     SimpleEnum simpleEnum;
 }
