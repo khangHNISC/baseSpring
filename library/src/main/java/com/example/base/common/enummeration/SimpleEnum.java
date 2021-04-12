@@ -1,6 +1,5 @@
 package com.example.base.common.enummeration;
 
-import com.example.base.common.conversion.WithValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -19,9 +18,9 @@ public enum SimpleEnum {
     String description;
 
     @SuppressWarnings("unused")
-    public static SimpleEnum fromId(int code){
-        for(SimpleEnum e: values()){
-            if(e.code == code) return e;
+    public static SimpleEnum fromId(int code) {
+        for (SimpleEnum e : values()) {
+            if (e.code == code) return e;
         }
         throw new IllegalStateException("in valid code for enum");
     }

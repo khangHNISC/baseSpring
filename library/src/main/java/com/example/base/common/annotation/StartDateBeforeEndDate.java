@@ -1,5 +1,6 @@
 package com.example.base.common.annotation;
 
+import org.apache.commons.lang3.reflect.FieldUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.PropertyAccessorFactory;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -10,7 +11,9 @@ import javax.validation.ConstraintValidatorContext;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
+import java.lang.reflect.Field;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
@@ -26,10 +29,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface StartDateBeforeEndDate {
 
-    String startDate();
-
-    String endDate();
-
     String message() default "Start date must before End date";
 
     Class<?>[] groups() default {};
@@ -38,20 +37,16 @@ public @interface StartDateBeforeEndDate {
 
     class Validator implements ConstraintValidator<StartDateBeforeEndDate, Object> {
 
-        private String startDate;
-        private String endDate;
-
-        @Override
-        public void initialize(StartDateBeforeEndDate constraintAnnotation) {
-            startDate = constraintAnnotation.startDate();
-            endDate = constraintAnnotation.endDate();
-        }
-
         @Override
         public boolean isValid(Object value, ConstraintValidatorContext context) {
+            final Class<?> clazz = value.getClass();
+            final List<Field> startDates = FieldUtils.getFieldsListWithAnnotation(clazz, StartDate.class);
+            final List<Field> endDates = FieldUtils.getFieldsListWithAnnotation(clazz, EndDate.class);
+            String startDateField = startDates.get(0).getName();
+            String endDateField = endDates.get(0).getName();
             BeanWrapper wrapper = PropertyAccessorFactory.forBeanPropertyAccess(value);
-            Date start = (Date) wrapper.getPropertyValue(this.startDate);
-            Date end = (Date) wrapper.getPropertyValue(this.endDate);
+            Date start = (Date) wrapper.getPropertyValue(startDateField);
+            Date end = (Date) wrapper.getPropertyValue(endDateField);
             if (Objects.nonNull(start) && Objects.nonNull(end)) {
                 return start.before(end);
             }
