@@ -27,7 +27,7 @@ public class ConditionalEnumConverter implements ConditionalGenericConverter {
     public Object convert(Object source, TypeDescriptor sourceType, TypeDescriptor targetType) {
         int code = Integer.parseInt((String) source);
         Class<?> clazz = Class.forName(targetType.getName());
-        Method fromId = clazz.getMethod("fromId", int.class);
+        Method fromId = clazz.getMethod("detect", Integer.class);
         return fromId.invoke(null, code);
     }
 }
