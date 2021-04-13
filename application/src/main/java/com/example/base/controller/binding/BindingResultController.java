@@ -19,7 +19,7 @@ public class BindingResultController implements WebMvcConfigurer {
         registry.addViewController("/results").setViewName("results");
     }
 
-    // something wrong
+    // something wrong hre is sfsfl
     @GetMapping("/binding")
     public String showForm(@ModelAttribute("form") PostForm postForm) {
         //@ModelAttribute = model.addAttribute("form", new PostForm())
