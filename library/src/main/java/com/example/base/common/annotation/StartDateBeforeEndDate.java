@@ -50,7 +50,7 @@ public @interface StartDateBeforeEndDate {
             if (Objects.nonNull(start) && Objects.nonNull(end)) {
                 return start.before(end);
             }
-            return Objects.isNull(start) && Objects.isNull(end);
+            return true; //object null will not be handled
         }
     }
 }

@@ -1,21 +1,42 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <style>
+        .is-danger {
+            background-color: red;
+        }
+    </style>
+</head>
 <body>
 <form action="#" th:action="@{/flowGet}" th:object="${form}" method="post">
     <table>
         <tr>
-            <td>FromDate: </td>
-            <td><input type="text" th:field="*{fromDate}"/></td>
+            <td>FromDate:</td>
+            <td>
+                <input type="text" th:field="*{fromDate}"
+                       th:classappend="(${#fields.hasErrors('fromDate')}? ' is-danger')"/>
+            </td>
             <td th:if="${#fields.hasErrors('fromDate')}" th:errors="*{fromDate}">Name Error</td>
         </tr>
         <tr>
-            <td>ToDate: </td>
-            <td><input type="text" th:field="*{toDate}"/></td>
+            <td>ToDate:</td>
+            <td><input type="text" th:field="*{toDate}"
+                       th:classappend="(${#fields.hasErrors('toDate')}? ' is-danger')"/></td>
             <td th:if="${#fields.hasErrors('toDate')}" th:errors="*{toDate}">Age Error</td>
         </tr>
         <tr>
-            <td>ENUM: </td>
-            <td><input type="text" th:field="*{simpleEnum}"/></td>
+            <td>ENUM:</td>
+            <td>
+                <div class="select" th:classappend="(${#fields.hasErrors('simpleEnum')}? ' is-danger')">
+                    <select th:field="*{simpleEnum}">
+                        <option th:each="e : ${enums}"
+                                th:value="${e.code}"
+                                th:text="${e.description}">
+                            Category
+                        </option>
+                    </select>
+                </div>
+            </td>
             <td th:if="${#fields.hasErrors('simpleEnum')}" th:errors="*{simpleEnum}">simpleEnum Error</td>
         </tr>
         <tr>
