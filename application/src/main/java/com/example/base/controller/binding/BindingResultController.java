@@ -26,7 +26,7 @@ public class BindingResultController implements WebMvcConfigurer {
         return "binding/form";
     }
 
-    //this can apply to get mapping
+    //this can apply to get mapping toooo
     @PostMapping("/binding")
     public String checkPersonInfo(@Valid @ModelAttribute("form") PostForm postForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
