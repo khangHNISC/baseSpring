@@ -1,9 +1,11 @@
 package com.example.base.service1;
 
 import com.example.base.common.annotation.StartDateBeforeEndDate;
+import com.example.base.common.enummeration.SimpleEnum;
 import lombok.Value;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -12,8 +14,12 @@ import java.util.Date;
 @Value
 @StartDateBeforeEndDate(startDate = "fromDate", endDate = "toDate")
 public class AdvanceGetForm {
+    @NotNull
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     Date fromDate;
+    @NotNull
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     Date toDate;
+    @NotNull
+    SimpleEnum simpleEnum;
 }
