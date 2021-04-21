@@ -16,4 +16,8 @@ A playground for Spring projects
 
 6: a Nghiệp làm: Security + @Secure t2/19/04
 
-7: Kien @JPA HIBERNATE
+
+---------------------------------------------------------------------------------------------
+JPA in jpa-examples
+
+1. Streamable
