@@ -19,7 +19,6 @@ class HelloRepositoryTest {
 
     @Test
     void findById() {
-        //is this one go to db permanent or new method has new instance
         helloRepository.save(new Hello(1L));
         Optional<Hello> h = helloRepository.findById(1L);
         assertTrue(h.isPresent());
