@@ -1,7 +1,10 @@
 package com.example.base.hibernate.association.one_to_one;
 
 import com.example.base.BaseH2Test;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.*;
@@ -16,25 +19,24 @@ class BidirectionalOneToOneTest extends BaseH2Test {
         User khang = User.builder().userName("Khang").build();
         ContactInfo info = ContactInfo.builder().address("downtown").build();
         khang.setInfo(info);
-        em.persist(khang);
 
-        User saved = em.find(User.class, 1L);
+        User saved = em.persistFlushFind(khang);
         assertNotNull(saved.info);
         assertNotNull(saved.info.user);
     }
 
     @Test
     void oneToOne() {
-        User kien = User.builder().userName("Kien").build();
-        em.persist(kien);
-
-        User savedKien = em.find(User.class, 1L);
+        User savedKien = em.persistFlushFind(User.builder().userName("Kien").build());
         ContactInfo info1 = ContactInfo.builder().address("downtown").user(savedKien).build();
         ContactInfo info2 = ContactInfo.builder().address("chinaTown").user(savedKien).build();
         em.persist(info1);
         em.persist(info2);
 
-        assertThrows(Exception.class, () -> {});
+        assertThrows(PersistenceException.class,
+                () -> em.getEntityManager().createQuery("SELECT ci FROM " +
+                        "BidirectionalOneToOneTest$ContactInfo ci")
+                        .getResultList());
     }
 
     @Builder
@@ -62,7 +64,7 @@ class BidirectionalOneToOneTest extends BaseH2Test {
     }
 
     @Builder
-    @Entity
+    @Entity(name = "BidirectionalOneToOneTest$ContactInfo")
     @NoArgsConstructor
     @AllArgsConstructor
     private static class ContactInfo {

@@ -14,38 +14,35 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * Created by khangld5 on Apr 22, 2021
  */
-class UnidirectionalOneToOneTest extends BaseH2Test {
+public class UnidirectionalOneToOneTest extends BaseH2Test {
 
     @Test
     void testRelationship() {
-        User kien = User.builder().userName("Kien").build();
-        em.persist(kien);
-
         //em as first-level cache, data have not yet persisted (delay writing as late as possible)
-        User savedKien = em.find(User.class, 1L);
+        User savedKien = em.persistFlushFind(User.builder().userName("Kien").build());
         ContactInfo info = ContactInfo.builder().address("downtown").user(savedKien).build();
         em.persist(info);
 
         //before create query, em auto flush all data to db
-        ContactInfo saveInfo = em.createQuery("select ci from ContactInfo1 ci where ci.user = :user", ContactInfo.class)
-                .setParameter("user", kien)
+        ContactInfo saveInfo = em.getEntityManager().createQuery("SELECT ci FROM " +
+                "UnidirectionalOneToOneTest$ContactInfo ci WHERE ci.user = :user", ContactInfo.class)
+                .setParameter("user", savedKien)
                 .getSingleResult();
         assertNotNull(saveInfo.user);
     }
 
     @Test
     void oneToOne() {
-        User kien = User.builder().userName("Kien").build();
-        em.persist(kien);
-
-        User savedKien = em.find(User.class, 1L);
+        User savedKien = em.persistFlushFind(User.builder().userName("Kien").build());
         ContactInfo info1 = ContactInfo.builder().address("downtown").user(savedKien).build();
         ContactInfo info2 = ContactInfo.builder().address("chinaTown").user(savedKien).build();
         em.persist(info1);
         em.persist(info2);
 
-        assertThrows(Exception.class, () -> {
-        });
+        assertThrows(PersistenceException.class,
+                () -> em.getEntityManager().createQuery("select ci from " +
+                        "UnidirectionalOneToOneTest$ContactInfo ci")
+                        .getResultList());
     }
 
     @Builder
@@ -62,7 +59,7 @@ class UnidirectionalOneToOneTest extends BaseH2Test {
     }
 
     @Builder
-    @Entity(name = "ContactInfo1") //require name for createQuery hsql
+    @Entity(name = "UnidirectionalOneToOneTest$ContactInfo") //require name for createQuery hsql
     @NoArgsConstructor
     @AllArgsConstructor
     private static class ContactInfo {
@@ -77,7 +74,3 @@ class UnidirectionalOneToOneTest extends BaseH2Test {
         User user; //create a foreign key linking to User @Id, name doesn't matter (generally associate class + _id)
     }
 }
-/**
- * 1. only create test entity
- * 2. why one - one not forcing
- */
