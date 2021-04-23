@@ -47,7 +47,7 @@ public class UnidirectionalOneToOneTest extends BaseH2Test {
     @AllArgsConstructor
     private static class User {
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue
         //if id was passed then detach Entity Exception will throw
         long id;
 

@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import javax.persistence.*;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class BidirectionalOneToOneTest extends BaseH2Test {
@@ -21,12 +20,10 @@ class BidirectionalOneToOneTest extends BaseH2Test {
         khang.setInfo(info);
 
         User saved = em.persistFlushFind(khang);
-        assertNotNull(saved.info);
-        assertNotNull(saved.info.user);
     }
 
     @Test
-    void oneToOneStrictMapping() {
+    void joinColumnUniqueTrue() {
         User kien = User.builder().userName("Kien").build();
         ContactInfo info1 = ContactInfo.builder().address("downtown").build();
         kien.setInfo(info1);
@@ -51,12 +48,13 @@ class BidirectionalOneToOneTest extends BaseH2Test {
     @ToString
     private static class User {
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue
         long id;
 
         String userName;
 
         @ToString.Exclude
+        //mappedBy -> Parent class, this fetch Eager even those specify LAZY
         @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
         ContactInfo info;
 
