@@ -26,17 +26,22 @@ class BidirectionalOneToOneTest extends BaseH2Test {
     }
 
     @Test
-    void oneToOne() {
-        User savedKien = em.persistFlushFind(User.builder().userName("Kien").build());
-        ContactInfo info1 = ContactInfo.builder().address("downtown").user(savedKien).build();
-        ContactInfo info2 = ContactInfo.builder().address("chinaTown").user(savedKien).build();
-        em.persist(info1);
-        em.persist(info2);
+    void oneToOneStrictMapping() {
+        User kien = User.builder().userName("Kien").build();
+        ContactInfo info1 = ContactInfo.builder().address("downtown").build();
+        kien.setInfo(info1);
+        User savedKien = em.persistFlushFind(kien);
 
         assertThrows(PersistenceException.class,
-                () -> em.getEntityManager().createQuery("SELECT ci FROM " +
-                        "BidirectionalOneToOneTest$ContactInfo ci")
-                        .getResultList());
+                () -> em.persistAndFlush(ContactInfo.builder().address("chinaTown").user(savedKien).build())
+        );
+    }
+
+    @Test
+    void optionalFalseOneToOne() {
+        //non null relationship is required
+        assertThrows(PersistenceException.class, () ->
+                em.persistFlushFind(User.builder().userName("Kien").build()));
     }
 
     @Builder
@@ -52,7 +57,7 @@ class BidirectionalOneToOneTest extends BaseH2Test {
         String userName;
 
         @ToString.Exclude
-        @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+        @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
         ContactInfo info;
 
         public void setInfo(ContactInfo info) {

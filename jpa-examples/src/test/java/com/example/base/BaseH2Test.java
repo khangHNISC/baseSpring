@@ -13,10 +13,10 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 /**
  * Created by khangld5 on Apr 22, 2021
  * <p>
- * since there is no way for this test to detect only individuals testing entities,
- * all entities in this modules will be detected by hibernate.
+ * since there is no way for spring test to detect only individuals testing entities,
+ * all entities in this modules will be detected by hibernate. (@DataJpaTest)
  * <p>
- * Therefore the entity naming are required making up for duplicate entity class name.
+ * Therefore the entity naming are required to make up for duplicate entity class names.
  * The naming convention will be TestClassName + '$' + EntityClassName
  *
  * @see UnidirectionalOneToOneTest

@@ -18,7 +18,8 @@ public class UnidirectionalOneToOneTest extends BaseH2Test {
 
     @Test
     void testRelationship() {
-        //em as first-level cache, data have not yet persisted (delay writing as late as possible)
+        //em as first-level cache, data have not yet persisted to DB after persist(delay writing as late as possible)
+        //flush: data persisted but still can be roll back if transaction had not committed
         User savedKien = em.persistFlushFind(User.builder().userName("Kien").build());
         ContactInfo info = ContactInfo.builder().address("downtown").user(savedKien).build();
         em.persist(info);
@@ -36,13 +37,8 @@ public class UnidirectionalOneToOneTest extends BaseH2Test {
         User savedKien = em.persistFlushFind(User.builder().userName("Kien").build());
         ContactInfo info1 = ContactInfo.builder().address("downtown").user(savedKien).build();
         ContactInfo info2 = ContactInfo.builder().address("chinaTown").user(savedKien).build();
-        em.persist(info1);
-        em.persist(info2);
-
-        assertThrows(PersistenceException.class,
-                () -> em.getEntityManager().createQuery("select ci from " +
-                        "UnidirectionalOneToOneTest$ContactInfo ci")
-                        .getResultList());
+        em.persistAndFlush(info1);
+        assertThrows(PersistenceException.class, () -> em.persistAndFlush(info2));
     }
 
     @Builder
