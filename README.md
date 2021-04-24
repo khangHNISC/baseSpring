@@ -21,3 +21,8 @@ A playground for Spring projects
 JPA in jpa-examples
 
 1. Streamable
+
+2. com.example.base.hibernate.association
+
+    1. 1 - 1: https://vladmihalcea.com/the-best-way-to-map-a-onetoone-relationship-with-jpa-and-hibernate/
+    2. 1 - ∞: https://vladmihalcea.com/the-best-way-to-map-a-onetomany-association-with-jpa-and-hibernate/
