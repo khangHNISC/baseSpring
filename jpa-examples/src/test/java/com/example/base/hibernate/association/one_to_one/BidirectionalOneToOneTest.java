@@ -1,10 +1,7 @@
 package com.example.base.hibernate.association.one_to_one;
 
 import com.example.base.BaseH2Test;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.*;
@@ -14,31 +11,21 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class BidirectionalOneToOneTest extends BaseH2Test {
 
     @Test
-    void testRelationship() {
-        User khang = User.builder().userName("Khang").build();
-        ContactInfo info = ContactInfo.builder().address("downtown").build();
-        khang.setInfo(info);
-
-        User saved = em.persistFlushFind(khang);
-    }
-
-    @Test
     void joinColumnUniqueTrue() {
-        User kien = User.builder().userName("Kien").build();
         ContactInfo info1 = ContactInfo.builder().address("downtown").build();
+        User kien = User.builder().userName("Kien").build();
         kien.setInfo(info1);
         User savedKien = em.persistFlushFind(kien);
 
-        assertThrows(PersistenceException.class,
-                () -> em.persistAndFlush(ContactInfo.builder().address("chinaTown").user(savedKien).build())
-        );
+        ContactInfo info2 = ContactInfo.builder().address("chinaTown").user(savedKien).build();
+        assertThrows(PersistenceException.class, () -> em.persistAndFlush(info2));
     }
 
     @Test
     void optionalFalseOneToOne() {
         //non null relationship is required
-        assertThrows(PersistenceException.class, () ->
-                em.persistFlushFind(User.builder().userName("Kien").build()));
+        User kien = User.builder().userName("Kien").build();
+        assertThrows(PersistenceException.class, () -> em.persistFlushFind(kien));
     }
 
     @Builder
@@ -55,7 +42,7 @@ class BidirectionalOneToOneTest extends BaseH2Test {
 
         @ToString.Exclude
         //mappedBy -> Parent class, this fetch Eager even those specify LAZY
-        @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
+        @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, optional = false)
         ContactInfo info;
 
         public void setInfo(ContactInfo info) {
@@ -77,7 +64,7 @@ class BidirectionalOneToOneTest extends BaseH2Test {
 
         String address;
 
-        @OneToOne(fetch = FetchType.LAZY)
+        @OneToOne
         @JoinColumn(name = "user_id", unique = true)
         User user;
     }

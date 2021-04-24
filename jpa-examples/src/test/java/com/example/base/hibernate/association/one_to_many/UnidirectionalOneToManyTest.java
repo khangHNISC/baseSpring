@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by khangld5 on Apr 23, 2021
@@ -41,7 +40,7 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
     }
 
     @Test
-    void testRemoveParent() {
+    void testCascadeDelete() {
         Employee saved = em.persistFlushFind(admin);
         em.remove(saved);
         em.flush();
@@ -53,9 +52,12 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
     }
 
     @Test
-    void allowEmptyChild() {
-        admin = Employee.builder().name("kien").build();
-        em.persistAndFlush(admin);
+    void orphanRemoval() {
+        Employee saved = em.persistAndFlush(admin);
+        long roleId = saved.removeFirstRole();
+        em.flush();
+
+        assertNull(em.find(Role.class, roleId));
     }
 
     @Builder
@@ -70,7 +72,8 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
         String name;
 
         @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-        //create employee_roles table auto 
+        @JoinColumn(name = "owner", referencedColumnName = "id")
+        //if turn off create extra employee_roles table auto
         private final List<Role> roles = new ArrayList<>();
 
         public List<Role> getRoles() {
@@ -79,6 +82,11 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
 
         public void addRole(Role newRole) {
             roles.add(newRole);
+        }
+
+        public long removeFirstRole() {
+            Role e = roles.remove(0);
+            return e.id;
         }
     }
 
@@ -92,5 +100,15 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
         long id;
 
         String name;
+
+        /**
+         * 1. this one must be null see this
+         * https://vladmihalcea.com/the-best-way-to-map-a-onetomany-association-with-jpa-and-hibernate/
+         * <p>
+         * 2. when delete trigger a null update on this field before delete
+         * need this insertable and updatable for cascade delete
+         */
+        @Column(insertable = false, updatable = false)
+        long owner;
     }
 }

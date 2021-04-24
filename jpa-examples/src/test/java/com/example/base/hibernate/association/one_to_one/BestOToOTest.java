@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test;
 
 import javax.persistence.*;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by khangld5 on Apr 23, 2021
@@ -37,7 +38,7 @@ class BestOToOTest extends BaseH2Test {
     }
 
     @Builder
-    @Entity
+    @Entity(name = "BestOToOTest$ContactInfo")
     @NoArgsConstructor
     @AllArgsConstructor
     private static class ContactInfo {
@@ -47,7 +48,8 @@ class BestOToOTest extends BaseH2Test {
         String address;
 
         @MapsId
-        @OneToOne(fetch = FetchType.LAZY)
+        @OneToOne //default load Eager no matter insert
+        @JoinColumn(name = "id")
         User user;
     }
 }
