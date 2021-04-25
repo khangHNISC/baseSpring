@@ -61,7 +61,7 @@ public class UnidirectionalOneToOneTest extends BaseH2Test {
     private static class ContactInfo {
         @Id
         @GeneratedValue
-        long id; //some how this goes to 2
+        long id;
 
         String address;
 

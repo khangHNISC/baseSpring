@@ -42,7 +42,7 @@ class BidirectionalOneToOneTest extends BaseH2Test {
 
         @ToString.Exclude
         @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, optional = false)
-        //mappedBy -> Parent class, this fetch Eager even those specify LAZY
+        //mappedBy marked which one is Parent class, this fetch Eager even those specify LAZY
         ContactInfo info;
 
         public void setInfo(ContactInfo info) {
