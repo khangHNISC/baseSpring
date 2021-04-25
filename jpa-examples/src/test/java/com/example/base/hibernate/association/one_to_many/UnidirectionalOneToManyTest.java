@@ -43,7 +43,7 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
     @Test
     void testAdd() {
         em.persistAndFlush(admin);
-        //some reason these tests auto fetch lazy relation
+        //these tests auto fetch lazy relation since all of this test is under transaction
         Employee saved = em.getEntityManager().createQuery("SELECT e FROM " +
                 "UnidirectionalOneToManyTest$Employee e WHERE e.id = :id", Employee.class)
                 .setParameter("id", 1L)
@@ -94,7 +94,7 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
 
         @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
         @JoinColumn(name = "owner", referencedColumnName = "id")
-        //if turn off create extra employee_roles table auto
+        //if turn off create extra employee_roles table like many to many
         private final List<Role> roles = new ArrayList<>();
 
         public List<Role> getRoles() {
@@ -125,7 +125,7 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
         /**
          * 1. this one must be null see this
          * https://vladmihalcea.com/the-best-way-to-map-a-onetomany-association-with-jpa-and-hibernate/
-         * <p>
+         *
          * 2. when delete trigger a null update on this field before delete
          * need this insertable and updatable for cascade delete
          */
