@@ -47,7 +47,7 @@ class BidirectionalManyToManyLinkEntityTest extends BaseH2Test {
 
         String name;
 
-        @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
+        @OneToMany(mappedBy = "id.author", cascade = CascadeType.ALL, orphanRemoval = true)
         private final Set<AuthorBookMap> authorBooks = new HashSet<>();
 
         public Author(String name) {
@@ -64,11 +64,9 @@ class BidirectionalManyToManyLinkEntityTest extends BaseH2Test {
         public void removeBook(Book book) {
             for (Iterator<AuthorBookMap> iterator = authorBooks.iterator(); iterator.hasNext(); ) {
                 AuthorBookMap map = iterator.next();
-                if (map.author.equals(this) && map.book.equals(book)) {
+                if (map.id.book.equals(book)) {
                     iterator.remove(); //author remove book
-                    map.book.authorBooks.remove(map); //book remove author
-                    map.author = null;
-                    map.book = null;
+                    map.id.book.authorBooks.remove(map); //book remove author
                 }
             }
         }
@@ -76,35 +74,31 @@ class BidirectionalManyToManyLinkEntityTest extends BaseH2Test {
 
     @Entity
     @NoArgsConstructor
+    @AllArgsConstructor
     @EqualsAndHashCode(onlyExplicitlyIncluded = true)
     static class AuthorBookMap {
 
         @EmbeddedId
+        @EqualsAndHashCode.Include
         AuthorBookId id;
 
-        @ManyToOne
-        @MapsId("authorId")
-        @EqualsAndHashCode.Include
-        Author author;
-
-        @ManyToOne
-        @MapsId("bookId")
-        @EqualsAndHashCode.Include
-        Book book;
-
         public AuthorBookMap(Author author, Book book) {
-            this.author = author;
-            this.book = book;
-            this.id = new AuthorBookId(author.id, book.id);
+            this.id = new AuthorBookId(author, book);
         }
     }
 
     @Embeddable
     @AllArgsConstructor
     @NoArgsConstructor
+    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
     static class AuthorBookId implements Serializable {
-        Long authorId;
-        Long bookId;
+        @ManyToOne
+        @EqualsAndHashCode.Include
+        Author author;
+
+        @ManyToOne
+        @EqualsAndHashCode.Include
+        Book book;
     }
 
     @Entity
@@ -121,7 +115,7 @@ class BidirectionalManyToManyLinkEntityTest extends BaseH2Test {
         @EqualsAndHashCode.Include
         String name;
 
-        @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+        @OneToMany(mappedBy = "id.book", cascade = CascadeType.ALL, orphanRemoval = true)
         private final Set<AuthorBookMap> authorBooks = new HashSet<>();
 
         public Book(String name) {
