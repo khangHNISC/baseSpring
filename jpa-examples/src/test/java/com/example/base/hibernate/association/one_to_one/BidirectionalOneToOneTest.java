@@ -41,8 +41,8 @@ class BidirectionalOneToOneTest extends BaseH2Test {
         String userName;
 
         @ToString.Exclude
-        //mappedBy -> Parent class, this fetch Eager even those specify LAZY
         @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, optional = false)
+        //mappedBy -> Parent class, this fetch Eager even those specify LAZY
         ContactInfo info;
 
         public void setInfo(ContactInfo info) {
@@ -66,6 +66,7 @@ class BidirectionalOneToOneTest extends BaseH2Test {
 
         @OneToOne
         @JoinColumn(name = "user_id", unique = true)
+        //this will specify foreign key
         User user;
     }
 }

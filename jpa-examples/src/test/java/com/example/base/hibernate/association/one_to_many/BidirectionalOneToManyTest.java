@@ -9,9 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -48,11 +46,11 @@ class BidirectionalOneToManyTest extends BaseH2Test {
         //if the collection is huge then consider only keep @ManyToOne at child then using query to get fetch
         //This collection cannot limit size like query-level pagination
         //this might loose nice function like cascade or orphan but gain performance
-        @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-        private final List<Role> roles = new ArrayList<>();
+        @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+        private final Set<Role> roles = new HashSet<>();
 
-        public List<Role> getRoles() {
-            return Collections.unmodifiableList(roles);
+        public Set<Role> getRoles() {
+            return Collections.unmodifiableSet(roles);
         }
 
         public void addRole(Role newRole) {

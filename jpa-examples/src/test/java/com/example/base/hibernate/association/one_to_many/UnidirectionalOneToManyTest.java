@@ -14,10 +14,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -66,7 +63,8 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
 
     @Test
     void orphanRemoval() {
-        long roleId = em.persistAndFlush(admin).removeFirstRole();
+        Role r = admin.getRoles().iterator().next();
+        long roleId = em.persistAndFlush(admin).removeFirstRole(r);
         em.flush();
 
         assertNull(em.find(Role.class, roleId));
@@ -76,9 +74,8 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
     @Transactional(propagation = Propagation.NOT_SUPPORTED)
     void isFuckingLazyBro() {
         Employee saved = repository.save(admin);
-        Optional<List<Role>> getSaveByFind = repository.findById(saved.id)
-                .map(Employee::getRoles);
-        assertThrows(LazyInitializationException.class, () -> getSaveByFind.map(List::size));
+        Optional<Set<Role>> getSaveByFind = repository.findById(saved.id).map(Employee::getRoles);
+        assertThrows(LazyInitializationException.class, () -> getSaveByFind.map(Set::size));
     }
 
     @Builder
@@ -95,19 +92,20 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
         @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
         @JoinColumn(name = "owner", referencedColumnName = "id")
         //if turn off create extra employee_roles table like many to many
-        private final List<Role> roles = new ArrayList<>();
+        //set over list
+        private final Set<Role> roles = new HashSet<>();
 
-        public List<Role> getRoles() {
-            return Collections.unmodifiableList(roles);
+        public Set<Role> getRoles() {
+            return Collections.unmodifiableSet(roles);
         }
 
         public void addRole(Role newRole) {
             roles.add(newRole);
         }
 
-        public long removeFirstRole() {
-            Role e = roles.remove(0);
-            return e.id;
+        public long removeFirstRole(Role r) {
+            roles.remove(r);
+            return r.id;
         }
     }
 
@@ -125,7 +123,7 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
         /**
          * 1. this one must be null see this
          * https://vladmihalcea.com/the-best-way-to-map-a-onetomany-association-with-jpa-and-hibernate/
-         *
+         * <p>
          * 2. when delete trigger a null update on this field before delete
          * need this insertable and updatable for cascade delete
          */
