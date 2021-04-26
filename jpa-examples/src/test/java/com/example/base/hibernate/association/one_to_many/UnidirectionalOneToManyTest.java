@@ -1,10 +1,10 @@
 package com.example.base.hibernate.association.one_to_many;
 
 import com.example.base.BaseH2Test;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.LazyInitializationException;
+import org.hibernate.annotations.NaturalId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +30,9 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
 
     @BeforeEach
     void setup() {
-        admin = Employee.builder().name("kien").build();
-        Role adminRole = Role.builder().name("admin").build();
-        Role presidentRole = Role.builder().name("president").build();
+        admin = new Employee("kien");
+        Role adminRole = new Role("admin");
+        Role presidentRole = new Role("president");
         admin.addRole(adminRole);
         admin.addRole(presidentRole);
     }
@@ -63,8 +63,7 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
 
     @Test
     void orphanRemoval() {
-        Role r = admin.getRoles().iterator().next();
-        long roleId = em.persistAndFlush(admin).removeFirstRole(r);
+        long roleId = em.persistAndFlush(admin).removeFirstRole();
         em.flush();
 
         assertNull(em.find(Role.class, roleId));
@@ -78,10 +77,8 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
         assertThrows(LazyInitializationException.class, () -> getSaveByFind.map(Set::size));
     }
 
-    @Builder
     @Entity(name = "UnidirectionalOneToManyTest$Employee")
     @NoArgsConstructor
-    @AllArgsConstructor
     private static class Employee {
         @Id
         @GeneratedValue
@@ -95,6 +92,10 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
         //set over list
         private final Set<Role> roles = new HashSet<>();
 
+        public Employee(String name) {
+            this.name = name;
+        }
+
         public Set<Role> getRoles() {
             return Collections.unmodifiableSet(roles);
         }
@@ -103,21 +104,27 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
             roles.add(newRole);
         }
 
-        public long removeFirstRole(Role r) {
+        public long removeFirstRole() {
+            Role r = roles.iterator().next();
             roles.remove(r);
             return r.id;
         }
+
+        public int hashCode() {
+            return getClass().hashCode();
+        }
     }
 
-    @Builder
     @Entity(name = "UnidirectionalOneToManyTest$Role")
     @NoArgsConstructor
-    @AllArgsConstructor
+    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
     private static class Role {
         @Id
         @GeneratedValue
         long id;
 
+        @NaturalId
+        @EqualsAndHashCode.Include
         String name;
 
         /**
@@ -126,9 +133,16 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
          * <p>
          * 2. when delete trigger a null update on this field before delete
          * need this insertable and updatable for cascade delete
+         * <p>
+         * 3. After persist check the hashcode since set has probelm with hash code
+         * https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
          */
         @Column(insertable = false, updatable = false)
         long owner;
+
+        public Role(String name) {
+            this.name = name;
+        }
     }
 
     @Repository

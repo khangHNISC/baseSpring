@@ -9,7 +9,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -62,11 +64,10 @@ class BidirectionalOneToManyTest extends BaseH2Test {
     @Entity
     @NoArgsConstructor
     @AllArgsConstructor
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+    @EqualsAndHashCode(exclude = {"id"})
     private static class Role {
         @Id
         @GeneratedValue
-        @EqualsAndHashCode.Include
         long id;
 
         String name;

@@ -1,7 +1,7 @@
 package com.example.base.hibernate.association.one_to_one;
 
 import com.example.base.BaseH2Test;
-import lombok.*;
+import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.*;
@@ -12,27 +12,25 @@ class BidirectionalOneToOneTest extends BaseH2Test {
 
     @Test
     void joinColumnUniqueTrue() {
-        ContactInfo info1 = ContactInfo.builder().address("downtown").build();
-        User kien = User.builder().userName("Kien").build();
+        ContactInfo info1 = new ContactInfo("downtown");
+        User kien = new User("Kien");
         kien.setInfo(info1);
         User savedKien = em.persistFlushFind(kien);
 
-        ContactInfo info2 = ContactInfo.builder().address("chinaTown").user(savedKien).build();
+        ContactInfo info2 = new ContactInfo("downtown");
+        info2.user = savedKien;
         assertThrows(PersistenceException.class, () -> em.persistAndFlush(info2));
     }
 
     @Test
     void optionalFalseOneToOne() {
         //non null relationship is required
-        User kien = User.builder().userName("Kien").build();
+        User kien = new User("Kien");
         assertThrows(PersistenceException.class, () -> em.persistFlushFind(kien));
     }
 
-    @Builder
     @Entity
     @NoArgsConstructor
-    @AllArgsConstructor
-    @ToString
     private static class User {
         @Id
         @GeneratedValue
@@ -40,10 +38,13 @@ class BidirectionalOneToOneTest extends BaseH2Test {
 
         String userName;
 
-        @ToString.Exclude
         @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, optional = false)
         //mappedBy marked which one is Parent class, this fetch Eager even those specify LAZY
         ContactInfo info;
+
+        public User(String name) {
+            this.userName = name;
+        }
 
         public void setInfo(ContactInfo info) {
             if (info != null) {
@@ -53,10 +54,8 @@ class BidirectionalOneToOneTest extends BaseH2Test {
         }
     }
 
-    @Builder
     @Entity(name = "BidirectionalOneToOneTest$ContactInfo")
     @NoArgsConstructor
-    @AllArgsConstructor
     private static class ContactInfo {
         @Id
         @GeneratedValue
@@ -67,6 +66,10 @@ class BidirectionalOneToOneTest extends BaseH2Test {
         @OneToOne
         @JoinColumn(name = "user_id", unique = true)
         //this will specify foreign key
-        User user;
+        private User user;
+
+        public ContactInfo(String address) {
+            this.address = address;
+        }
     }
 }
