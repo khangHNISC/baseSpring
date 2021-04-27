@@ -8,6 +8,7 @@ import java.util.List;
 public interface CafeRepository extends JpaRepository<Cafe, Long> {
 
     /**
+     * interface projection is unique feature
      * https://www.bytestree.com/spring/spring-data-jpa-projections-5-ways-return-custom-object/
      */
     @Query(value = "SELECT c FROM CAFE c")

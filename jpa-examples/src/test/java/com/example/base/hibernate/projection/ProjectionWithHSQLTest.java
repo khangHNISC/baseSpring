@@ -51,12 +51,4 @@ class ProjectionWithHSQLTest extends BaseH2Test {
                 .getResultList();
         assertFalse(cafes.isEmpty());
     }
-
-    @Test
-    void useConstructorResult() {
-        List<MyCafeDTO> cafes = cafes = em.getEntityManager()
-                .createNamedQuery("Cafe.getCafes", MyCafeDTO.class)
-                .getResultList();
-        assertFalse(cafes.isEmpty());
-    }
 }

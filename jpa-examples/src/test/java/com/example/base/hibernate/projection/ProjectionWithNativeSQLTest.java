@@ -54,6 +54,15 @@ class ProjectionWithNativeSQLTest extends BaseH2Test {
         assertFalse(cafes.isEmpty());
     }
 
+    @Test
+    //less use
+    void useConstructorResultNameNative() {
+        List<MyCafeDTO> cafes = em.getEntityManager()
+                .createNamedQuery("Cafe.getCafes", MyCafeDTO.class)
+                .getResultList();
+        assertFalse(cafes.isEmpty());
+    }
+
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
@@ -61,5 +70,4 @@ class ProjectionWithNativeSQLTest extends BaseH2Test {
         private BigInteger id;
         private String title;
     }
-
 }
