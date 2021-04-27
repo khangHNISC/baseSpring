@@ -58,7 +58,11 @@ public class UnidirectionalOneToOneTest extends BaseH2Test {
     @NoArgsConstructor
     private static class ContactInfo {
         @Id
-        @GeneratedValue
+        @GeneratedValue(strategy = GenerationType.SEQUENCE)
+        @SequenceGenerator(
+                name = "contact_info_id_sq",
+                allocationSize = 1
+        )
         private Long id;
 
         String address;
