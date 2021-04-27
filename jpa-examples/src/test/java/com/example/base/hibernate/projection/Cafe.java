@@ -8,7 +8,7 @@ import javax.persistence.*;
  * Created by khangld5 on Apr 27, 2021
  */
 @NamedNativeQuery(
-        name = "GetCafe",
+        name = "Cafe.getCafes",
         query = "SELECT c.id AS id, c.name AS title FROM CAFE c",
         resultSetMapping = "MyCafeDTOMapping"
 )
