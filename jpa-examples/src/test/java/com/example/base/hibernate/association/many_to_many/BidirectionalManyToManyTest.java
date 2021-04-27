@@ -37,12 +37,10 @@ class BidirectionalManyToManyTest extends BaseH2Test {
 
     @Entity
     @NoArgsConstructor
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
     static class Author {
         @Id
         @GeneratedValue
-        @EqualsAndHashCode.Include
-        long id;
+        private Long id;
 
         String name;
 
@@ -64,6 +62,20 @@ class BidirectionalManyToManyTest extends BaseH2Test {
         public void addBooks(Book book) {
             books.add(book);
         }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof Author)) {
+                return false;
+            }
+            Author other = (Author) obj;
+            return id != null && id.equals(other.id);
+        }
+
+        @Override
+        public int hashCode() {
+            return getClass().hashCode();
+        }
     }
 
     @Entity(name = "BidirectionalManyToManyTest$Book")
@@ -73,10 +85,10 @@ class BidirectionalManyToManyTest extends BaseH2Test {
 
         @Id
         @GeneratedValue
-        @EqualsAndHashCode.Include
-        long id;
+        private Long id;
 
         @NaturalId
+        @EqualsAndHashCode.Include
         String name;
 
         @ManyToMany(mappedBy = "books")

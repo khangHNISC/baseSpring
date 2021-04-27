@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class UnidirectionalManyToManyTest extends BaseH2Test {
 
@@ -51,7 +51,7 @@ class UnidirectionalManyToManyTest extends BaseH2Test {
     static class Author {
         @Id
         @GeneratedValue
-        long id;
+        private Long id;
 
         String name;
 
@@ -77,13 +77,12 @@ class UnidirectionalManyToManyTest extends BaseH2Test {
 
     @Entity(name = "UnidirectionalManyToManyTest$Book")
     @NoArgsConstructor
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+    @EqualsAndHashCode(exclude = {"id"})
     static class Book {
 
         @Id
         @GeneratedValue
-        @EqualsAndHashCode.Include
-        long id;
+        private Long id;
 
         @NaturalId
         String name;

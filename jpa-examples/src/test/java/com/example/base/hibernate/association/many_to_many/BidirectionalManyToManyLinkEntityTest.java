@@ -38,12 +38,10 @@ class BidirectionalManyToManyLinkEntityTest extends BaseH2Test {
 
     @Entity
     @NoArgsConstructor
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
     static class Author {
         @Id
         @GeneratedValue
-        @EqualsAndHashCode.Include
-        Long id;
+        private Long id;
 
         String name;
 
@@ -70,16 +68,28 @@ class BidirectionalManyToManyLinkEntityTest extends BaseH2Test {
                 }
             }
         }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof Author)) {
+                return false;
+            }
+            Author other = (Author) obj;
+            return id != null && id.equals(other.id);
+        }
+
+        @Override
+        public int hashCode() {
+            return getClass().hashCode();
+        }
     }
 
     @Entity
     @NoArgsConstructor
-    @AllArgsConstructor
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+    @EqualsAndHashCode
     static class AuthorBookMap {
 
         @EmbeddedId
-        @EqualsAndHashCode.Include
         AuthorBookId id;
 
         public AuthorBookMap(Author author, Book book) {
@@ -90,14 +100,12 @@ class BidirectionalManyToManyLinkEntityTest extends BaseH2Test {
     @Embeddable
     @AllArgsConstructor
     @NoArgsConstructor
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+    @EqualsAndHashCode
     static class AuthorBookId implements Serializable {
         @ManyToOne
-        @EqualsAndHashCode.Include
         Author author;
 
         @ManyToOne
-        @EqualsAndHashCode.Include
         Book book;
     }
 
@@ -108,8 +116,7 @@ class BidirectionalManyToManyLinkEntityTest extends BaseH2Test {
 
         @Id
         @GeneratedValue
-        @EqualsAndHashCode.Include
-        Long id;
+        private Long id;
 
         @NaturalId
         @EqualsAndHashCode.Include

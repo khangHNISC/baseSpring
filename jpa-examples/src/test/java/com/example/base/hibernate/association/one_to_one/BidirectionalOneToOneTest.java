@@ -34,7 +34,7 @@ class BidirectionalOneToOneTest extends BaseH2Test {
     private static class User {
         @Id
         @GeneratedValue
-        long id;
+        private Long id;
 
         String userName;
 
@@ -59,7 +59,7 @@ class BidirectionalOneToOneTest extends BaseH2Test {
     private static class ContactInfo {
         @Id
         @GeneratedValue
-        long id;
+        private Long id;
 
         String address;
 

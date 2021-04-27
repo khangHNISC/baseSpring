@@ -1,9 +1,6 @@
 package com.example.base.hibernate.association.one_to_many;
 
 import com.example.base.BaseH2Test;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,9 +18,9 @@ class BidirectionalOneToManyTest extends BaseH2Test {
 
     @BeforeEach
     void setup() {
-        admin = Employee.builder().name("kien").build();
-        Role adminRole = Role.builder().name("admin").employee(admin).build();
-        Role presidentRole = Role.builder().name("president").employee(admin).build();
+        admin = new Employee("kien");
+        Role adminRole = new Role("admin", admin);
+        Role presidentRole = new Role("president", admin);
         admin.addRole(adminRole);
         admin.addRole(presidentRole);
     }
@@ -34,14 +31,12 @@ class BidirectionalOneToManyTest extends BaseH2Test {
         assertFalse(saved.getRoles().isEmpty());
     }
 
-    @Builder
     @Entity
     @NoArgsConstructor
-    @AllArgsConstructor
     private static class Employee {
         @Id
         @GeneratedValue
-        long id;
+        private Long id;
 
         String name;
 
@@ -50,6 +45,10 @@ class BidirectionalOneToManyTest extends BaseH2Test {
         //this might loose nice function like cascade or orphan but gain performance
         @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
         private final Set<Role> roles = new HashSet<>();
+
+        public Employee(String name) {
+            this.name = name;
+        }
 
         public Set<Role> getRoles() {
             return Collections.unmodifiableSet(roles);
@@ -60,19 +59,35 @@ class BidirectionalOneToManyTest extends BaseH2Test {
         }
     }
 
-    @Builder
     @Entity
     @NoArgsConstructor
-    @AllArgsConstructor
-    @EqualsAndHashCode(exclude = {"id"})
     private static class Role {
         @Id
         @GeneratedValue
-        long id;
+        private Long id;
 
         String name;
 
         @ManyToOne(fetch = FetchType.LAZY) //this properly all you need
         Employee employee;
+
+        public Role(String name, Employee employee) {
+            this.name = name;
+            this.employee = employee;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof Role)) {
+                return false;
+            }
+            Role other = (Role) obj;
+            return id != null && id.equals(other.id);
+        }
+
+        @Override
+        public int hashCode() {
+            return getClass().hashCode();
+        }
     }
 }

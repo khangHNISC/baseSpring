@@ -27,20 +27,29 @@ class BestOToOTest extends BaseH2Test {
     private static class User {
         @Id
         @GeneratedValue
-        long id;
+        private Long id;
 
         String userName;
+
+        @Embedded
+        @AttributeOverride(name = "state", column = @Column(name = "ADDR_STATE"))
+        Address address;
 
         public User(String name) {
             this.userName = name;
         }
     }
 
+    @Embeddable
+    private static class Address {
+        private String state;
+    }
+
     @Entity(name = "BestOToOTest$ContactInfo")
     @NoArgsConstructor
     private static class ContactInfo {
         @Id
-        long id;
+        private Long id;
 
         String address;
 

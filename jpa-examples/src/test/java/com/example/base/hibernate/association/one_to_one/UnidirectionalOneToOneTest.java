@@ -45,7 +45,7 @@ public class UnidirectionalOneToOneTest extends BaseH2Test {
         @Id
         @GeneratedValue
         //if id was passed then detach Entity Exception will throw
-        long id;
+        private Long id;
 
         String userName;
 
@@ -59,7 +59,7 @@ public class UnidirectionalOneToOneTest extends BaseH2Test {
     private static class ContactInfo {
         @Id
         @GeneratedValue
-        long id;
+        private Long id;
 
         String address;
 

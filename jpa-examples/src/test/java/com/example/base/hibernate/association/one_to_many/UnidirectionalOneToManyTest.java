@@ -82,7 +82,7 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
     private static class Employee {
         @Id
         @GeneratedValue
-        long id;
+        private Long id;
 
         String name;
 
@@ -109,10 +109,6 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
             roles.remove(r);
             return r.id;
         }
-
-        public int hashCode() {
-            return getClass().hashCode();
-        }
     }
 
     @Entity(name = "UnidirectionalOneToManyTest$Role")
@@ -121,7 +117,7 @@ class UnidirectionalOneToManyTest extends BaseH2Test {
     private static class Role {
         @Id
         @GeneratedValue
-        long id;
+        private Long id;
 
         @NaturalId
         @EqualsAndHashCode.Include
