@@ -14,8 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * Created by khangld5 on Apr 27, 2021
+ * note: em cant map tp interface-base projection
  */
-class ProjectionWithJPQLTest extends BaseH2Test {
+class ProjectionWithHSQLTest extends BaseH2Test {
 
     @BeforeEach
     void setUp() {
@@ -47,6 +48,14 @@ class ProjectionWithJPQLTest extends BaseH2Test {
     void useConstructorExpression() {
         List<MyCafeDTO> cafes = em.getEntityManager()
                 .createQuery("SELECT new com.example.base.hibernate.projection.MyCafeDTO(c.id, c.name) FROM CAFE c", MyCafeDTO.class)
+                .getResultList();
+        assertFalse(cafes.isEmpty());
+    }
+
+    @Test
+    void useConstructorResult() {
+        List<MyCafeDTO> cafes = cafes = em.getEntityManager()
+                .createNamedQuery("GetCafe", MyCafeDTO.class)
                 .getResultList();
         assertFalse(cafes.isEmpty());
     }
