@@ -46,4 +46,9 @@ class ProjectionsWithJpaRepoTest extends BaseH2Test {
 
         assertFalse(cafes.isEmpty());
     }
+
+    @Test
+    void dynamicProjection() {
+
+    }
 }

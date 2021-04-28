@@ -28,4 +28,7 @@ public interface CafeRepository extends JpaRepository<Cafe, Long> {
      */
     @Query(nativeQuery = true)
     List<MyCafeDTO> getCafes();
+
+    @Query(value = "SELECT c FROM CAFE c")
+    <T> List<T> findEveryThingWithDynamicProjection(Class<T> tClass);
 }

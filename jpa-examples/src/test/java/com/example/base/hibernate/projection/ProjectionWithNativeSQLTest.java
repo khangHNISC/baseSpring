@@ -6,12 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.query.NativeQuery;
 import org.hibernate.transform.Transformers;
+import org.hibernate.type.StandardBasicTypes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.math.BigInteger;
 import java.util.List;
-
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -39,6 +38,8 @@ class ProjectionWithNativeSQLTest extends BaseH2Test {
         List<MyCafeDTO2> cafes = em.getEntityManager()
                 .createNativeQuery(FIND_ALL_SQL)
                 .unwrap(NativeQuery.class)
+                .addScalar("id", StandardBasicTypes.LONG)  //once you use addScalar, it requires to be done on all properties (thí
+                .addScalar("title", StandardBasicTypes.STRING)
                 .setResultTransformer(Transformers.aliasToBean(MyCafeDTO2.class))
                 .getResultList();
 
@@ -55,7 +56,7 @@ class ProjectionWithNativeSQLTest extends BaseH2Test {
     }
 
     @Test
-    //less use
+//less use
     void useConstructorResultNameNative() {
         List<MyCafeDTO> cafes = em.getEntityManager()
                 .createNamedQuery("Cafe.getCafes", MyCafeDTO.class)
@@ -67,7 +68,7 @@ class ProjectionWithNativeSQLTest extends BaseH2Test {
     @AllArgsConstructor
     @NoArgsConstructor
     public static class MyCafeDTO2 {
-        private BigInteger id;
+        private Long id;
         private String title;
     }
 }
