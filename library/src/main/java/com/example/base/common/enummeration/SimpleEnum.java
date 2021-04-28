@@ -1,28 +1,29 @@
 package com.example.base.common.enummeration;
 
-import com.example.base.common.conversion.WithValue;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
+import org.springframework.util.Assert;
 
 /**
  * Created by khangld5 on Apr 08, 2021
  */
 @Getter
 @ToString
-public enum SimpleEnum implements WithValue {
+@AllArgsConstructor
+public enum SimpleEnum {
     ALL(0, "--ALL--"),
     SIMPLE1(1, "SIMPLE1");
 
     int code;
     String description;
 
-    SimpleEnum(int code, String description) {
-        this.code = code;
-        this.description = description;
-    }
-
-    @Override
-    public int withValue() {
-        return code;
+    @SuppressWarnings("unused")
+    public static SimpleEnum detect(Integer code) {
+        Assert.notNull(code, "Code must not be null");
+        for (SimpleEnum candidate : values()) {
+            if (candidate.code == code) return candidate;
+        }
+        throw new IllegalArgumentException("'" + code + "' is not a valid code");
     }
 }
