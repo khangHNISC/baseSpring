@@ -11,6 +11,7 @@
         <module name="base (2) (org.example)" />
         <module name="library" />
         <module name="application" />
+        <module name="spring-jdbc-examples" />
         <module name="jooq-exmaples" />
         <module name="spring-data-examples" />
         <module name="baseSpring" />
@@ -24,6 +25,7 @@
       <module name="jooq-exmaples" options="-parameters" />
       <module name="library" options="-parameters" />
       <module name="spring-data-examples" options="-parameters" />
+      <module name="spring-jdbc-examples" options="-parameters" />
     </option>
   </component>
 </project>

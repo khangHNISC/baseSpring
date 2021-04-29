@@ -51,7 +51,7 @@
                 <version>3.14.8</version>
 
                 <executions>
-                    <!-- Generate the required class from the database -->
+                    <!-- Generate the required class from the database, add and ignore this -->
                     <execution>
                         <id>generate-h2</id>
                         <phase>generate-sources</phase>
@@ -63,8 +63,8 @@
 
                 <dependencies>
                     <!--
-                        Because we use the H2 database, we have to add it as the dependency
-                        of this plugin.
+                        Because we use the H2 database, we have to add it as the dependency of this plugin.
+                        Just dependency require for plugin to run
                     -->
                 </dependencies>
 
@@ -78,7 +78,6 @@
                                     <key>scripts</key>
                                     <value>src/main/resources/schema.sql</value>
                                 </property>
-
                             </properties>
                         </database>
                         <!-- Generate classes for tables and records -->
