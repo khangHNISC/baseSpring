@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/library/pom.xml" />
         <option value="$PROJECT_DIR$/application/pom.xml" />
         <option value="$PROJECT_DIR$/jpa-examples/pom.xml" />
+        <option value="$PROJECT_DIR$/jooq-exmaples/pom.xml" />
       </list>
     </option>
   </component>

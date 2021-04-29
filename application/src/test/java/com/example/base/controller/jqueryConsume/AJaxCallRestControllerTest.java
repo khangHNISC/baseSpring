@@ -1,9 +1,11 @@
 package com.example.base.controller.jqueryConsume;
 
+import com.example.base.caching.CachingService;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.util.LinkedMultiValueMap;
 
@@ -17,6 +19,9 @@ class AJaxCallRestControllerTest {
 
     @Autowired
     private MockMvc mvc;
+
+    @MockBean
+    private CachingService cachingService;
 
     @Test
     @SneakyThrows

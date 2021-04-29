@@ -1,0 +1,5 @@
+CREATE TABLE CUP
+(
+    id   INT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL
+);

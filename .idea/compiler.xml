@@ -11,6 +11,7 @@
         <module name="base (2) (org.example)" />
         <module name="library" />
         <module name="application" />
+        <module name="jooq-exmaples" />
         <module name="baseSpring" />
         <module name="jpa-examples" />
         <module name="base" />
@@ -20,8 +21,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="application" options="-parameters" />
-      <module name="base" options="-parameters" />
+      <module name="base" options="" />
       <module name="base (1) (com.example)" options="-parameters" />
+      <module name="jooq-exmaples" options="-parameters" />
       <module name="jpa-examples" options="-parameters" />
       <module name="library" options="-parameters" />
     </option>
