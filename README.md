@@ -18,7 +18,7 @@ A playground for Spring projects
 
 
 ---------------------------------------------------------------------------------------------
-JPA in jpa-examples
+JPA in spring-jpa-examples
 
 1. Streamable
 
@@ -26,3 +26,9 @@ JPA in jpa-examples
 
     1. 1 - 1: https://vladmihalcea.com/the-best-way-to-map-a-onetoone-relationship-with-jpa-and-hibernate/
     2. 1 - ∞: https://vladmihalcea.com/the-best-way-to-map-a-onetomany-association-with-jpa-and-hibernate/
+    3. ∞ - ∞: ...
+
+3. com.example.base.hibernate.mapping
+
+---------------------------------------------------------------------------------------------
+JOOQ in Jooq-exampes test and spring-jdbc-examples in spring jdbc examples test
