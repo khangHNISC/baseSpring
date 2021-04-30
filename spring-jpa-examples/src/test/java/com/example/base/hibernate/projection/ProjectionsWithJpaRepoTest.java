@@ -49,6 +49,16 @@ class ProjectionsWithJpaRepoTest extends BaseJpaH2Test {
 
     @Test
     void dynamicProjection() {
+        List<MyCafe> cafes = cafeRepository.findEveryThingWithDynamicProjection(MyCafe.class);
+        List<MyCafe2> cafe2s = cafeRepository.findEveryThingWithDynamicProjection(MyCafe2.class);
 
+        assertFalse(cafes.isEmpty());
+        assertFalse(cafe2s.isEmpty());
+    }
+
+    public interface MyCafe2 {
+        Long getId();
+
+        String getTitle();
     }
 }

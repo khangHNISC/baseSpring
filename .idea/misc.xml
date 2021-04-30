@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/jooq-exmaples/pom.xml" />
         <option value="$PROJECT_DIR$/spring-data-examples/pom.xml" />
         <option value="$PROJECT_DIR$/spring-jdbc-examples/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-jpa-examples/pom.xml" />
       </list>
     </option>
   </component>
