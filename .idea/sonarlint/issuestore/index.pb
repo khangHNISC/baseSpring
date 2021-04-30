@@ -9,8 +9,6 @@ m
 capplication/src/test/java/com/example/base/controller/jqueryConsume/AJaxCallRestControllerTest.java,a/3/a3e7209c42e1daec96e3d8d1d9b2eaad828fa624
 ä
 Zapplication/src/main/java/com/example/base/controller/binding/BindingResultController.java,8/6/86210e339241bcb76e01860b57c4a4bf98093880
-k
-;application/src/main/java/com/example/base/Application.java,0/7/078637dbc445c497e5e1972ef52506b45bca5225
 z
 Japplication/src/main/java/com/example/base/controller/HelloController.java,2/b/2b3c0194db0a8f5f166db1235d28fcd84168dfae
 è
