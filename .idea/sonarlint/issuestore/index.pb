@@ -3,8 +3,6 @@ m
 =library/src/main/java/com/example/base/service/MyService.java,d/6/d680a85e70f7d603a2afcb200a7f6e7419467112
 ?
 library/pom.xml,b/8/b832e9e6aa69e04b36abe92d5f67292bdc0f32f1
-C
-application/pom.xml,c/8/c8e09e04d708c7173c1ba2685d2316cc2ad28f74
 m
 =library/src/main/java/com/example/base/service1/PostForm.java,b/8/b8da427b3692ddaf9e0e6f1df4363ece103f09ae
 “

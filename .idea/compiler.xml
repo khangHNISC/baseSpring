@@ -14,19 +14,15 @@
         <module name="spring-jdbc-examples" />
         <module name="jooq-exmaples" />
         <module name="baseSpring" />
-        <module name="jpa-examples" />
+        <module name="spring-jpa-examples" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="spring-jpa-examples" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="application" options="-parameters" />
       <module name="base (1) (com.example)" options="-parameters" />
       <module name="jooq-exmaples" options="-parameters" />
-      <module name="jpa-examples" options="-parameters" />
       <module name="library" options="-parameters" />
       <module name="spring-jdbc-examples" options="-parameters" />
       <module name="spring-jpa-examples" options="-parameters" />
