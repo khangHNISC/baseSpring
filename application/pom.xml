@@ -35,12 +35,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>library</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>spring-jpa-examples</artifactId>

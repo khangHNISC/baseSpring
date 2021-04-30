@@ -1,5 +1,8 @@
-package com.example.springjdbcexamples;
+package com.example.springjdbcexamples.simpleTest;
 
+import com.example.springjdbcexamples.BaseJdbcH2Test;
+import com.example.springjdbcexamples.Pet;
+import com.example.springjdbcexamples.PetRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
