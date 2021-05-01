@@ -1,10 +1,13 @@
 package com.example.base;
 
+import com.example.base.service.Reservation;
+import com.example.base.service.ReservationClient;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
@@ -17,6 +20,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 class TestForConsumer {
 
+    @Autowired
+    ReservationClient client;
+
     TestRestTemplate template = new TestRestTemplate();
 
     @Test
@@ -26,11 +32,10 @@ class TestForConsumer {
         assertEquals("Jane", a.getName());
     }
 
-    @Setter
-    @Getter
-    @NoArgsConstructor
-    static class Reservation {
-        long id;
-        String name;
+    @Test
+    void getAllReservationUsingFeign() {
+        Reservation a = client.findAll();
+        Assertions.assertNotNull(a);
+        assertEquals("Jane", a.getName());
     }
 }
