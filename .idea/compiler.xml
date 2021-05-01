@@ -12,12 +12,16 @@
         <module name="library" />
         <module name="application" />
         <module name="spring-jdbc-examples" />
+        <module name="jooq-exmaples" />
         <module name="spring-kafka-examples" />
         <module name="spring-jpa-examples" />
         <module name="application-modular-service" />
         <module name="jooq-examples" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jooq-examples" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -25,6 +29,7 @@
       <module name="application-modular-service" options="-parameters" />
       <module name="base (1) (com.example)" options="-parameters" />
       <module name="jooq-examples" options="-parameters" />
+      <module name="jooq-exmaples" options="-parameters" />
       <module name="library" options="-parameters" />
       <module name="spring-jdbc-examples" options="-parameters" />
       <module name="spring-jpa-examples" options="-parameters" />

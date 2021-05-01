@@ -3,12 +3,8 @@ m
 =library/src/main/java/com/example/base/service/MyService.java,d/6/d680a85e70f7d603a2afcb200a7f6e7419467112
 ?
 library/pom.xml,b/8/b832e9e6aa69e04b36abe92d5f67292bdc0f32f1
-ä
-Zapplication/src/main/java/com/example/base/controller/binding/BindingResultController.java,8/6/86210e339241bcb76e01860b57c4a4bf98093880
 z
 Japplication/src/main/java/com/example/base/controller/HelloController.java,2/b/2b3c0194db0a8f5f166db1235d28fcd84168dfae
-Å
-Qapplication/src/main/java/com/example/base/controller/flowGet/WebController1.java,4/2/424e0f25b2454d047857a6ebb8c7729a16b0b0bc
 z
 Jlibrary/src/main/java/com/example/base/common/annotation/ValueAllowed.java,f/1/f1af569411898f8b50513cb7fa7fdd47ae047238
 {
@@ -33,10 +29,6 @@ g
 7library/src/main/java/com/example/base/caching/DTO.java,5/9/59054a907699f822710df490b71defda35b73cae
 s
 Clibrary/src/test/java/com/example/base/LibraryApplicationTests.java,e/c/ec22005e1299456219e6dfe5f8dc1b1f6fc00704
-
-Ojooq-exmaples/src/test/java/com/example/jooqexmaples/TestJooqConfiguration.java,2/2/22a35565d0cc9b67032c3cdbf842ec1c525b52ad
-E
-jooq-exmaples/pom.xml,b/e/befc875b510c37263534abeaff5dacbcef7450f0
 L
 spring-jdbc-examples/HELP.md,c/f/cfa51a89700a0f6d32e55381dbec606ab3de40fd
 ò
@@ -65,8 +57,6 @@ k
 uspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to_many/UnidirectionalOneToManyTest.java,b/1/b19dd7cb5002213775ce6b3acf8d68122b25a845
 M
 spring-kafka-examples/HELP.md,1/7/172452232ca3c850b3fe72f9f80820c4bf30bb39
-ì
-capplication/src/test/java/com/example/base/controller/jqueryConsume/AJaxCallRestControllerTest.java,a/3/a3e7209c42e1daec96e3d8d1d9b2eaad828fa624
 u
 Espring-kafka-examples/src/main/java/com/example/springkafka/Foo1.java,4/9/49a0d9badc9b35e1b1f500e4253a57fc88ef2f78
 u
@@ -78,24 +68,16 @@ L
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-r
-Bjooq-exmaples/src/test/java/com/example/jooqexmaples/TestJOOQ.java,5/5/55a812de27697cde60830140d25b669e0b006b29
 ê
 `spring-jdbc-examples/src/test/java/com/example/springjdbcexamples/simpleTest/SimpleJdbcTest.java,0/9/0913c0463fe0d5545dfc2261d1952c42f38274fa
 z
 Jspring-jdbc-examples/src/test/java/com/example/springjdbcexamples/Pet.java,3/3/33605395f7ee1a88321219626fb4fdafe1999ab7
-p
-@application/src/test/java/com/example/base/ApplicationTests.java,a/b/ab3cab031710058cc3d42da5b86e0f99f3b10e49
 Ñ
 Tapplication/src/main/java/com/example/base/controller/caching/CachingController.java,c/9/c94943f8e870840fd743633bce38aabf71f36611
 r
 Blibrary/src/main/java/com/example/base/caching/CachingService.java,8/9/89f5ca2c56026a25964e41e73dfa2ccf5b77fc09
-K
-spring-jpa-examples/pom.xml,3/0/308ee51eea75197a0097c336968145b02274137e
 S
 #application-modular-service/HELP.md,d/0/d0df263339720fd2f99e96990062be7468636605
-S
-#application-modular-service/pom.xml,9/0/90e32660a21353ee193c3fa857a53d4ecbd24362
 á
 Wapplication/src/main/java/com/example/base/common/conversion/StringToEnumConverter.java,d/8/d8bd6d1df5f3f4730329992096fbde80ecd89884
 Ü
@@ -110,3 +92,17 @@ z
 Jlibrary/src/main/java/com/example/base/common/enummeration/SimpleEnum.java,9/7/9760d82e517dda65a2739ccefba6fafd599a3aa6
 s
 Clibrary/src/main/java/com/example/base/service1/AdvanceGetForm.java,2/6/26a133ecdd1b73785a383dce72c168f160187dd7
+M
+spring-kafka-examples/pom.xml,1/b/1b1c9428e5d3aa7dd4158c70921a20fb82da2fd3
+á
+Wapplication/src/main/java/com/example/base/controller/thymeleaf_flow/ThymeleafFlow.java,f/4/f4dfd4e635607be87fbe03cae6d8c9a151f3aab9
+î
+dapplication/src/test/java/com/example/base/controller/jquery_consume/AJaxCallRestControllerTest.java,f/2/f282fbd689638a787679c57156ab16cdccba012e
+z
+Japplication/src/main/java/com/example/base/common/config/WebMVCConfig.java,1/5/15fed96eae71b69f1b388ac2c51bd9906d554e31
+m
+=library/src/main/java/com/example/base/service1/PostForm.java,b/8/b8da427b3692ddaf9e0e6f1df4363ece103f09ae
+£
+sspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to_one/UnidirectionalOneToOneTest.java,e/4/e474e5ff7701634b576e40d6e60bdbca749ac7a9
+¢
+rspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to_one/BidirectionalOneToOneTest.java,9/d/9d80a529c8e98aa85e63b4d32cc7a019e58d888d
