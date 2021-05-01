@@ -1,4 +1,4 @@
-package com.example.base.controller.jqueryConsume;
+package com.example.base.controller.jquery_consume;
 
 import com.example.base.caching.CachingService;
 import lombok.SneakyThrows;

@@ -1,4 +1,4 @@
-package com.example.base.controller.jqueryConsume;
+package com.example.base.controller.jquery_consume;
 
 import lombok.Value;
 import org.springframework.http.ResponseEntity;

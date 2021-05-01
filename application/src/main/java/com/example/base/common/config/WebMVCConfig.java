@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * Created by khangld5 on Apr 08, 2021
+ * another option: registry.addConverterFactory(new EnumConverterFactory());
  */
 @Configuration
 public class WebMVCConfig implements WebMvcConfigurer {
@@ -16,6 +17,5 @@ public class WebMVCConfig implements WebMvcConfigurer {
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatterForFieldAnnotation(new CurrencyAnnotationFormatter());
         registry.addConverter(new ConditionalEnumConverter());
-        //registry.addConverterFactory(new EnumConverterFactory());
     }
 }

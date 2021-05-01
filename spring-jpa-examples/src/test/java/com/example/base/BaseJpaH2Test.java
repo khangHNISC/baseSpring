@@ -1,6 +1,8 @@
 package com.example.base;
 
-import com.example.base.hibernate.association.one_to_one.UnidirectionalOneToOneTest;
+import org.junit.Ignore;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
@@ -20,14 +22,14 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  * Therefore the entity naming are required to make up for duplicate entity class names.
  * The naming convention will be TestClassName + '$' + EntityClassName
  *
- * @see UnidirectionalOneToOneTest
+ * UnidirectionalOneToOneTest
  */
 @DataJpaTest
 @ActiveProfiles("test")
 @ExtendWith(SpringExtension.class)
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-public class BaseJpaH2Test {
+public abstract class BaseJpaH2Test {
 
     @Autowired
     protected TestEntityManager em;

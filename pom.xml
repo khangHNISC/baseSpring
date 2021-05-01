@@ -15,6 +15,9 @@
     <modules>
         <module>application</module>
         <module>spring-jpa-examples</module>
+        <module>spring-jdbc-examples</module>
+        <module>spring-kafka-examples</module>
+        <module>jooq-examples</module>
         <module>library</module>
     </modules>
 

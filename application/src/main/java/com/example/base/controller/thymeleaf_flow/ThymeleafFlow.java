@@ -1,4 +1,4 @@
-package com.example.base.controller.thymeleafFlow;
+package com.example.base.controller.thymeleaf_flow;
 
 import com.example.base.common.annotation.CurrencyFormat;
 import com.example.base.common.enummeration.CurrencyUnit;

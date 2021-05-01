@@ -6,5 +6,5 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @JdbcTest
 @ExtendWith(SpringExtension.class)
-public class BaseJdbcH2Test {
+public abstract class BaseJdbcH2Test {
 }

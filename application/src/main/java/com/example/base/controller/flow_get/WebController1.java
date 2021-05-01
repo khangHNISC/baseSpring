@@ -1,4 +1,4 @@
-package com.example.base.controller.flowGet;
+package com.example.base.controller.flow_get;
 
 import com.example.base.common.enummeration.SimpleEnum;
 import com.example.base.service1.AdvanceGetForm;

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * Created by khangld5 on Apr 22, 2021
  */
-public class UnidirectionalOneToOneTest extends BaseJpaH2Test {
+class UnidirectionalOneToOneTest extends BaseJpaH2Test {
 
     @Test
     void testRelationship() {
