@@ -1,7 +1,6 @@
 package com.example.springkafka.simpleTest;
 
 import com.example.springkafka.Foo1;
-import com.example.springkafka.simpleTest.KafkaConsumer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
