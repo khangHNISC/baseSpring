@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/spring-jpa-examples/pom.xml" />
         <option value="$PROJECT_DIR$/spring-kafka-examples/pom.xml" />
         <option value="$PROJECT_DIR$/application-modular-service/pom.xml" />
+        <option value="$PROJECT_DIR$/secured-application/pom.xml" />
       </list>
     </option>
   </component>

@@ -12,6 +12,7 @@
         <module name="library" />
         <module name="application" />
         <module name="spring-jdbc-examples" />
+        <module name="secured-application" />
         <module name="spring-kafka-examples" />
         <module name="spring-jpa-examples" />
         <module name="application-modular-service" />
@@ -26,6 +27,7 @@
       <module name="base (1) (com.example)" options="-parameters" />
       <module name="jooq-examples" options="-parameters" />
       <module name="library" options="-parameters" />
+      <module name="secured-application" options="-parameters" />
       <module name="spring-jdbc-examples" options="-parameters" />
       <module name="spring-jpa-examples" options="-parameters" />
       <module name="spring-kafka-examples" options="-parameters" />
