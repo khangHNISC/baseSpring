@@ -15,6 +15,11 @@
         <option value="$PROJECT_DIR$/spring-kafka-examples/pom.xml" />
         <option value="$PROJECT_DIR$/application-modular-service/pom.xml" />
         <option value="$PROJECT_DIR$/secured-application/pom.xml" />
+        <option value="$PROJECT_DIR$/ouath2-resource-server/pom.xml" />
+        <option value="$PROJECT_DIR$/oauth2-client/pom.xml" />
+        <option value="$PROJECT_DIR$/oauth2-authorization-server/oauth2-authorization-server/pom.xml" />
+        <option value="$PROJECT_DIR$/oauth2-client/oauth2-authorization-server/pom.xml" />
+        <option value="$PROJECT_DIR$/oauth2-authorization-server/pom.xml" />
       </list>
     </option>
   </component>
