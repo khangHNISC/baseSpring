@@ -32,3 +32,10 @@ JPA in spring-jpa-examples
 
 ---------------------------------------------------------------------------------------------
 JOOQ in Jooq-exampes test and spring-jdbc-examples in spring jdbc examples test
+
+
+---------------------------------------------------------------------------------------------
+design - pattern for simple design pattern
+
+---------------------------------------------------------------------------------------------
+oauth2 - *** for authen + author flows with oauth2
