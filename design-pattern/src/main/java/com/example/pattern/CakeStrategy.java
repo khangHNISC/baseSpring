@@ -1,2 +1,4 @@
-package com.example.pattern;public class CakeStrateg7 {
+package com.example.pattern;
+
+public class CakeStrategy implements  CryptoStrategy{
 }

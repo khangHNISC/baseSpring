@@ -1,2 +1,4 @@
-package com.example.pattern;public interface CryptoStrategy {
+package com.example.pattern;
+
+public interface CryptoStrategy {
 }

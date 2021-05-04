@@ -1,2 +1,4 @@
-package com.example.pattern;public class BtcStrategy {
+package com.example.pattern;
+
+public class BtcStrategy implements  CryptoStrategy{
 }

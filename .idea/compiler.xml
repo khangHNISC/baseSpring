@@ -8,11 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="base (1) (com.example)" />
-        <module name="base (2) (org.example)" />
+        <module name="design-pattern" />
         <module name="oauth2-client" />
         <module name="library" />
         <module name="application" />
         <module name="spring-jdbc-examples" />
+        <module name="jooq-exmaples" />
         <module name="spring-kafka-examples" />
         <module name="oauth2-authorization-server" />
         <module name="spring-jpa-examples" />
@@ -21,6 +22,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="jpa-examples" target="1.8" />
       <module name="oauth2-resource-server" target="1.8" />
       <module name="oauth2-server" target="1.8" />
       <module name="secured_application" target="1.8" />
@@ -33,6 +35,7 @@
       <module name="application-modular-service" options="-parameters" />
       <module name="base (1) (com.example)" options="-parameters" />
       <module name="jooq-examples" options="-parameters" />
+      <module name="jooq-exmaples" options="-parameters" />
       <module name="library" options="-parameters" />
       <module name="oauth2-authorization-server" options="-parameters" />
       <module name="oauth2-client" options="-parameters" />

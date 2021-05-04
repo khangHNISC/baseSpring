@@ -1,2 +1,4 @@
-package com.example.pattern;public class EthStrategy {
+package com.example.pattern;
+
+public class EthStrategy implements  CryptoStrategy{
 }
