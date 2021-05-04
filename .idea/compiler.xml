@@ -21,11 +21,6 @@
         <module name="oauth2-resource-server" />
         <module name="application-modular-service" />
       </profile>
-      <profile name="Annotation profile for Unknown" enabled="true">
-        <sourceOutputDir name="../../target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../../target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="oauth2-server" target="1.8" />

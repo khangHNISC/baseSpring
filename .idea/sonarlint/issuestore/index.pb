@@ -140,3 +140,11 @@ Blibrary/src/main/java/com/example/base/caching/CachingService.java,8/9/89f5ca2
 Woauth2-client/src/test/java/com/example/securedapplication/SecuredApplicationTests.java,f/b/fbc8b5f0f9830e8c7613feba49bdef4660dbcc45
 F
 oauth2-client/mvnw.cmd,6/5/65cdb53b32f5667b298832a9c00275f61e52308b
+r
+Bjooq-examples/src/test/java/com/example/jooqexmaples/TestJOOQ.java,4/8/48d853a6624a068511b1b8599b59859cb5429116
+N
+oauth2-resource-server/pom.xml,a/2/a282d92074038ad6c22f9d9d66a29d5490163c7a
+š
+joauth2-resource-server/src/main/java/com/example/oauth2resourceserver/Oauth2ResourceServerApplication.java,f/8/f8cdd0169ecb829b980719b89ac66e27b45f12fa
+®
+~oauth2-authorization-server/src/test/java/com/example/oauth2authorizationserver/Oauth2AuthorizationServerApplicationTests.java,1/1/11585f3732d7a064098c190b2bf6a63729c28d1c
