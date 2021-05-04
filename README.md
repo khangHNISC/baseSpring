@@ -35,7 +35,8 @@ JOOQ in Jooq-exampes test and spring-jdbc-examples in spring jdbc examples test
 
 
 ---------------------------------------------------------------------------------------------
-design - pattern for simple design pattern
+design - pattern for simple design pattern: noobslayervn
+    1. abstrac-factory 
 
 ---------------------------------------------------------------------------------------------
 oauth2 - *** for authen + author flows with oauth2
