@@ -26,4 +26,5 @@ public enum SimpleEnum {
         }
         throw new IllegalArgumentException("'" + code + "' is not a valid code");
     }
+
 }

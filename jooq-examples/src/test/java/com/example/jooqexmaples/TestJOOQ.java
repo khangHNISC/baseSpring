@@ -1,5 +1,6 @@
 package com.example.jooqexmaples;
 
+import com.sun.istack.NotNull;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
@@ -16,8 +17,7 @@ import javax.sql.DataSource;
 import java.util.List;
 
 import static com.example.base.model.tables.Cup.CUP;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by khangld5 on Apr 29, 2021
@@ -42,12 +42,24 @@ class TestJOOQ {
     void testSomeJOOQ() {
         assertNotNull(create);
 
-        List<MyCup> cups = create.select().from(CUP).fetchInto(MyCup.class);
+        List<MyCup> cups = create.select().from(CUP).where(CUP.AGE.eq("100")).fetchInto(MyCup.class);
+        System.out.println(cups.toString());
         assertFalse(cups.isEmpty());
     }
 
     private static class MyCup {
         public long id;
+        @NotNull
         public String name;
+        public String age;
+
+        @Override
+        public String toString() {
+            return "MyCup{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", age='" + age + '\'' +
+                    '}';
+        }
     }
 }

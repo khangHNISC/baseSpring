@@ -8,17 +8,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="base (1) (com.example)" />
-        <module name="base (2) (org.example)" />
         <module name="oauth2-client" />
+        <module name="jooq-exmaples" />
+        <module name="spring-jpa-examples" />
+        <module name="jooq-examples" />
+        <module name="design-pattern" />
         <module name="library" />
         <module name="application" />
         <module name="spring-jdbc-examples" />
         <module name="spring-kafka-examples" />
         <module name="oauth2-authorization-server" />
         <module name="oauth2-resource-server" />
-        <module name="spring-jpa-examples" />
         <module name="application-modular-service" />
-        <module name="jooq-examples" />
+      </profile>
+      <profile name="Annotation profile for Unknown" enabled="true">
+        <sourceOutputDir name="../../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wrapper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -33,6 +40,7 @@
       <module name="application-modular-service" options="-parameters" />
       <module name="base (1) (com.example)" options="-parameters" />
       <module name="jooq-examples" options="-parameters" />
+      <module name="jooq-exmaples" options="-parameters" />
       <module name="library" options="-parameters" />
       <module name="oauth2-authorization-server" options="-parameters" />
       <module name="oauth2-client" options="-parameters" />

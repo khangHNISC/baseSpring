@@ -19,6 +19,7 @@
         <module>spring-kafka-examples</module>
         <module>jooq-examples</module>
         <module>library</module>
+        <module>design-pattern</module>
     </modules>
 
 </project>
