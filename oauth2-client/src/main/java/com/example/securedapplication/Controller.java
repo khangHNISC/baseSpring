@@ -1,8 +1,5 @@
 package com.example.securedapplication;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -20,31 +17,16 @@ class Controller {
     private final RestTemplate restTemplate;
     private final OAuth2AuthorizedClientService clientService;
 
-    @GetMapping("/private")
-    public String hello() {
-        return "hello";
-    }
-
     @GetMapping("/")
-    public PrincipalDetails profile(OAuth2AuthenticationToken token) {
+    public String getMessages(OAuth2AuthenticationToken token) {
         OAuth2AuthorizedClient client = clientService.loadAuthorizedClient(
                 token.getAuthorizedClientRegistrationId(),
                 token.getName());
 
-        String uri = client.getClientRegistration()
-                .getProviderDetails()
-                .getUserInfoEndpoint()
-                .getUri();
+        String uri = "http://localhost:8090/messages";
 
-        ResponseEntity<PrincipalDetails> responseEntity = this.restTemplate
-                .exchange(uri, HttpMethod.GET, null, PrincipalDetails.class);
+        ResponseEntity<String> responseEntity = this.restTemplate
+                .exchange(uri, HttpMethod.GET, null, String.class);
         return responseEntity.getBody();
-    }
-
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    static class PrincipalDetails {
-        private String name;
     }
 }

@@ -16,13 +16,13 @@
         <module name="jooq-exmaples" />
         <module name="spring-kafka-examples" />
         <module name="oauth2-authorization-server" />
+        <module name="oauth2-resource-server" />
         <module name="spring-jpa-examples" />
         <module name="application-modular-service" />
         <module name="jooq-examples" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="jpa-examples" target="1.8" />
       <module name="oauth2-resource-server" target="1.8" />
       <module name="oauth2-server" target="1.8" />
       <module name="secured_application" target="1.8" />
