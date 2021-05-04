@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.base.hibernate.association.one_to_many.UnidirectionalOneToManyTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.414 s - in com.example.base.hibernate.association.one_to_many.UnidirectionalOneToManyTest

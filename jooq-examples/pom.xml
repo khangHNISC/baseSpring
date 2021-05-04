@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>jooq-exmaples</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>jooq-exmaples</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>1.8</java.version>
+        <jooq.generator.db.dialect>org.jooq.util.h2.H2Database</jooq.generator.db.dialect>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jooq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta</artifactId>
+            <version>3.13.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta-extensions</artifactId>
+            <version>3.13.4</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <version>3.14.8</version>
+
+                <executions>
+                    <!-- Generate the required class from the database, add and ignore this -->
+                    <execution>
+                        <id>generate-h2</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <dependencies>
+                    <!--
+                        Because we use the H2 database, we have to add it as the dependency of this plugin.
+                        Just dependency require for plugin to run
+                    -->
+                </dependencies>
+
+                <configuration>
+                    <generator>
+                        <database>
+                            <!-- Configure the used database dialect -->
+                            <name>org.jooq.meta.extensions.ddl.DDLDatabase</name>
+                            <properties>
+                                <property>
+                                    <key>scripts</key>
+                                    <value>src/main/resources/schema.sql</value>
+                                </property>
+                            </properties>
+                        </database>
+                        <!-- Generate classes for tables and records -->
+                        <generate>
+                            <records>true</records>
+                        </generate>
+                        <!-- Configure the target package and directory -->
+                        <target>
+                            <packageName>com.example.base.model</packageName>
+                            <directory>target/generated-sources/jooq</directory>
+                        </target>
+                    </generator>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

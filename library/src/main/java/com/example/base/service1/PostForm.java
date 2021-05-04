@@ -1,6 +1,5 @@
 package com.example.base.service1;
 
-import com.example.base.common.annotation.StartDateBeforeEndDate;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
