@@ -6,15 +6,13 @@ spring:
     oauth2:
       client:
         registration:
-          login-client:
+          messaging-client-client-credentials:
             provider: local-authz
             client-id: messaging-client
             client-secret: secret
-            client-authentication-method: basic
             authorization-grant-type: client_credentials
-            scope: message.read
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-            client-name: Login Client
+            scope: message.read, message.write
+            client-name: messaging-client-client-credentials
         provider:
           local-authz:
             issuer-uri: http://auth-server:9000

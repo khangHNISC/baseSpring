@@ -140,5 +140,3 @@ Blibrary/src/main/java/com/example/base/caching/CachingService.java,8/9/89f5ca2
 Woauth2-client/src/test/java/com/example/securedapplication/SecuredApplicationTests.java,f/b/fbc8b5f0f9830e8c7613feba49bdef4660dbcc45
 F
 oauth2-client/mvnw.cmd,6/5/65cdb53b32f5667b298832a9c00275f61e52308b
-z
-Joauth2-client/src/main/java/com/example/securedapplication/Controller.java,3/4/34553c1c067f4b61f71f2a3d838e6b8fbc87e4f9

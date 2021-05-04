@@ -14,24 +14,6 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class SecuredApplication {
 
-    @Bean
-    RestTemplate restTemplate(OAuth2AuthorizedClientService clientService) {
-        return new RestTemplateBuilder().interceptors((httpRequest, bytes, execution) -> {
-
-            OAuth2AuthenticationToken token = (OAuth2AuthenticationToken)
-                    SecurityContextHolder.getContext().getAuthentication();
-
-            OAuth2AuthorizedClient client = clientService.loadAuthorizedClient(
-                    token.getAuthorizedClientRegistrationId(),
-                    token.getName());
-
-            httpRequest.getHeaders().add(HttpHeaders.AUTHORIZATION, "Bearer"
-                    + client.getAccessToken().getTokenValue());
-
-            return execution.execute(httpRequest, bytes);
-        }).build();
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(SecuredApplication.class, args);
     }
