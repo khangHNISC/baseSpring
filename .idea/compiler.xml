@@ -24,6 +24,7 @@
       <module name="oauth2-resource-server" target="1.8" />
       <module name="oauth2-server" target="1.8" />
       <module name="secured_application" target="1.8" />
+      <module name="spring-data-examples" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

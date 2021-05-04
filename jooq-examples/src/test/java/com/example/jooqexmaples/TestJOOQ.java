@@ -21,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * Created by khangld5 on Apr 29, 2021
+ *
+ * mark target as generated source
  */
 @JdbcTest
 @ExtendWith(SpringExtension.class)
