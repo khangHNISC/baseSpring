@@ -1,2 +1,9 @@
-package com.example.graphqlexamples;public class Person {
+package com.example.graphqlexamples.models;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+public class Person {
+    Long id;
+    String name;
 }
