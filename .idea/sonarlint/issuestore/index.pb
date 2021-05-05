@@ -29,8 +29,6 @@ g
 7library/src/main/java/com/example/base/caching/DTO.java,5/9/59054a907699f822710df490b71defda35b73cae
 s
 Clibrary/src/test/java/com/example/base/LibraryApplicationTests.java,e/c/ec22005e1299456219e6dfe5f8dc1b1f6fc00704
-L
-spring-jdbc-examples/HELP.md,c/f/cfa51a89700a0f6d32e55381dbec606ab3de40fd
 ò
 hspring-jpa-examples/src/test/java/com/example/base/hibernate/projection/ProjectionWithNativeSQLTest.java,f/a/fa460f08b172e122c33b2f2a1ba265e97ee1a603
 ì
@@ -53,14 +51,12 @@ y
 Ispring-jpa-examples/src/test/java/com/example/base/TestConfiguration.java,f/5/f5c5acb2745be7824c40b728fdfb8b0204fa31cd
 •
 uspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to_many/UnidirectionalOneToManyTest.java,b/1/b19dd7cb5002213775ce6b3acf8d68122b25a845
-M
-spring-kafka-examples/HELP.md,1/7/172452232ca3c850b3fe72f9f80820c4bf30bb39
 u
-Espring-kafka-examples/src/main/java/com/example/springkafka/Foo1.java,4/9/49a0d9badc9b35e1b1f500e4253a57fc88ef2f78
+Espring-kafka-examples/src/main/java/com/example/springkafka/Foo1.java,4\9\49a0d9badc9b35e1b1f500e4253a57fc88ef2f78
 u
-Espring-kafka-examples/src/main/java/com/example/springkafka/Foo2.java,8/6/86aec93d36c7a0ff52197fb75efe3d3c8613cfcb
+Espring-kafka-examples/src/main/java/com/example/springkafka/Foo2.java,8\6\86aec93d36c7a0ff52197fb75efe3d3c8613cfcb
 Ö
-Uspring-kafka-examples/src/test/java/com/example/springkafka/KafkaTestApplication.java,3/b/3b8cbd283ddd4c07b54df994c0d2fdddead90626
+Uspring-kafka-examples/src/test/java/com/example/springkafka/KafkaTestApplication.java,3\b\3b8cbd283ddd4c07b54df994c0d2fdddead90626
 L
 spring-jdbc-examples/pom.xml,8/7/87f5d9b2f1dc75993190f294ab142d17a8e4edac
 :
@@ -72,8 +68,6 @@ z
 Jspring-jdbc-examples/src/test/java/com/example/springjdbcexamples/Pet.java,3/3/33605395f7ee1a88321219626fb4fdafe1999ab7
 Ñ
 Tapplication/src/main/java/com/example/base/controller/caching/CachingController.java,c/9/c94943f8e870840fd743633bce38aabf71f36611
-S
-#application-modular-service/HELP.md,d/0/d0df263339720fd2f99e96990062be7468636605
 á
 Wapplication/src/main/java/com/example/base/common/conversion/StringToEnumConverter.java,d/8/d8bd6d1df5f3f4730329992096fbde80ecd89884
 Ü
@@ -85,7 +79,7 @@ Zapplication/src/main/java/com/example/base/common/conversion/ConditionalEnumCon
 x
 Hlibrary/src/main/java/com/example/base/common/annotation/EnumFromId.java,6/b/6b948ee79d25f2e9bf147ec1506e1a262008f281
 z
-Jlibrary/src/main/java/com/example/base/common/enummeration/SimpleEnum.java,9/7/9760d82e517dda65a2739ccefba6fafd599a3aa6
+Jlibrary/src/main/java/com/example/base/common/enummeration/SimpleEnum.java,9\7\9760d82e517dda65a2739ccefba6fafd599a3aa6
 s
 Clibrary/src/main/java/com/example/base/service1/AdvanceGetForm.java,2/6/26a133ecdd1b73785a383dce72c168f160187dd7
 M
@@ -101,7 +95,7 @@ sspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to
 ¢
 rspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to_one/BidirectionalOneToOneTest.java,9/d/9d80a529c8e98aa85e63b4d32cc7a019e58d888d
 7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 à
 Xspring-jdbc-examples/src/test/java/com/example/springjdbcexamples/TestConfiguration.java,9/0/90a3f618485f6c72d235c2d4d23ac9cbc0ac0bdd
 Ñ
@@ -113,7 +107,7 @@ Yspring-kafka-examples/src/test/java/com/example/springkafka/simpleTest/KafkaCon
 ü
 ospring-kafka-examples/src/test/java/com/example/springkafka/simpleTest/SpringKafkaExamplesApplicationTests.java,2/3/230521a949fd1ef277f528d8c630553f39f651cd
 u
-Espring-jpa-examples/src/test/java/com/example/base/BaseJpaH2Test.java,a/3/a34f387f355d4c6c6e6c2f603db87dacd311fdd2
+Espring-jpa-examples/src/test/java/com/example/base/BaseJpaH2Test.java,a\3\a34f387f355d4c6c6e6c2f603db87dacd311fdd2
 §
 tspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to_many/BidirectionalOneToManyTest.java,a/7/a7b6ee0f3a5f2c3acc592206b6e34444e8adbdb3
 à
@@ -123,17 +117,17 @@ Xspring-jpa-examples/src/test/java/com/example/base/streamable/ProductRepository
 ê
 `application/src/main/java/com/example/base/controller/jquery_consume/AJaxCallRestController.java,2/8/281c311d3352975807e7856e3d28698a1f454072
 ä
-Zapplication/src/main/java/com/example/base/controller/binding/BindingResultController.java,8/6/86210e339241bcb76e01860b57c4a4bf98093880
+Zapplication/src/main/java/com/example/base/controller/binding/BindingResultController.java,8\6\86210e339241bcb76e01860b57c4a4bf98093880
 û
-napplication-modular-service/src/main/java/com/example/modularservice/ApplicationModularServiceApplication.java,4/6/46342991179b531ee259e9acd0f13ae01db4d1d1
+napplication-modular-service/src/main/java/com/example/modularservice/ApplicationModularServiceApplication.java,4\6\46342991179b531ee259e9acd0f13ae01db4d1d1
 p
 @application/src/test/java/com/example/base/ApplicationTests.java,a/b/ab3cab031710058cc3d42da5b86e0f99f3b10e49
 C
-application/pom.xml,c/8/c8e09e04d708c7173c1ba2685d2316cc2ad28f74
+application/pom.xml,c\8\c8e09e04d708c7173c1ba2685d2316cc2ad28f74
 o
 ?application/src/test/java/com/example/base/TestForConsumer.java,4/d/4d685f07face17dcf34513d017b785a60a15e13f
 k
-;application/src/main/java/com/example/base/Application.java,0/7/078637dbc445c497e5e1972ef52506b45bca5225
+;application/src/main/java/com/example/base/Application.java,0\7\078637dbc445c497e5e1972ef52506b45bca5225
 r
 Blibrary/src/main/java/com/example/base/caching/CachingService.java,8/9/89f5ca2c56026a25964e41e73dfa2ccf5b77fc09
 á
@@ -141,10 +135,26 @@ Woauth2-client/src/test/java/com/example/securedapplication/SecuredApplicationTe
 F
 oauth2-client/mvnw.cmd,6/5/65cdb53b32f5667b298832a9c00275f61e52308b
 r
-Bjooq-examples/src/test/java/com/example/jooqexmaples/TestJOOQ.java,4/8/48d853a6624a068511b1b8599b59859cb5429116
+Bjooq-examples/src/test/java/com/example/jooqexmaples/TestJOOQ.java,4\8\48d853a6624a068511b1b8599b59859cb5429116
 N
 oauth2-resource-server/pom.xml,a/2/a282d92074038ad6c22f9d9d66a29d5490163c7a
 ö
 joauth2-resource-server/src/main/java/com/example/oauth2resourceserver/Oauth2ResourceServerApplication.java,f/8/f8cdd0169ecb829b980719b89ac66e27b45f12fa
 Æ
 ~oauth2-authorization-server/src/test/java/com/example/oauth2authorizationserver/Oauth2AuthorizationServerApplicationTests.java,1/1/11585f3732d7a064098c190b2bf6a63729c28d1c
+z
+Japplication/src/main/java/com/example/base/common/config/WebMVCConfig.java,1\5\15fed96eae71b69f1b388ac2c51bd9906d554e31
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+E
+jooq-examples/pom.xml,0\a\0a96c00c258d903b966c7ee6b4f5e34f899e136b
+F
+design-pattern/pom.xml,b\3\b39a8ea20be98deed1c06591378d54f5b6a61216
+•
+uoauth2-authorization-server/src/main/java/com/example/oauth2authorizationserver/config/AuthorizationServerConfig.java,9\6\9670f11cfcb3c04e9be0e8c2dce5e735574ce95b
+°
+qoauth2-authorization-server/src/main/java/com/example/oauth2authorizationserver/config/DefaultSecurityConfig.java,9\6\96818fd5b5b29751e66dc85aa006c3f56b00179d
+©
+yoauth2-authorization-server/src/main/java/com/example/oauth2authorizationserver/Oauth2AuthorizationServerApplication.java,8\1\81329b44fcddc4f326dc7eb628f527f3b1952ce5
+F
+spring-graphql/pom.xml,d\0\d0e043ee968d071b4a72139916f5093756fab21f
