@@ -21,7 +21,9 @@ public class SecurityConfig {
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests.anyRequest().authenticated()
                 )
-                .oauth2Login(withDefaults()) // default "/oauth2/authorization/messaging-client-oidc"
+                .oauth2Login(oauth2Login ->
+                        oauth2Login.loginPage("/oauth2/authorization/messaging-client-oidc"))
+                // default
                 .oauth2Client(withDefaults());
         return http.build();
     }
