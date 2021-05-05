@@ -23,7 +23,6 @@ public class SecurityConfig {
                 )
                 .oauth2Login(oauth2Login ->
                         oauth2Login.loginPage("/oauth2/authorization/messaging-client-oidc"))
-                // default
                 .oauth2Client(withDefaults());
         return http.build();
     }

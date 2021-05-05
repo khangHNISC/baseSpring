@@ -16,8 +16,8 @@ class ResourceServerConfig {
         http
                 .mvcMatcher("/messages/**")
                 .authorizeRequests()
-                .anyRequest().authenticated()
-                //.mvcMatchers("/messages/**").access("hasAuthority('SCOPE_openid')")
+                //.anyRequest().authenticated()
+                .mvcMatchers("/messages/**").access("hasAuthority('SCOPE_message.read')")
                 .and()
                 .oauth2ResourceServer()
                 .jwt();
