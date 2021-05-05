@@ -31,11 +31,14 @@ JPA in spring-jpa-examples
 3. com.example.base.hibernate.mapping
 
 ---------------------------------------------------------------------------------------------
-JOOQ in Jooq-exampes test and spring-jdbc-examples in spring jdbc examples test
+JOOQ in Jooq-examples test and spring-jdbc-examples in spring jdbc examples test
+
+GraphQL in grapl-examples
 
 
 ---------------------------------------------------------------------------------------------
 design - pattern for simple design pattern: noobslayervn
+
     1. abstrac-factory 
 
 ---------------------------------------------------------------------------------------------
