@@ -1,6 +1,7 @@
 package com.example.securedapplication;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
@@ -20,10 +21,10 @@ class AuthorizedController {
     }
 
     @GetMapping(value = "/authorize", params = "grant_type=authorization_code")
-    public ResponseEntity<String> authorizationCodeGrant(
+    public ResponseEntity<String[]> authorizationCodeGrant(
             @RegisteredOAuth2AuthorizedClient("messaging-client-oidc")
                     OAuth2AuthorizedClient authorizedClient) {
         String uri = "http://localhost:8090/messages";
-        return ResponseEntity.ok(authorizedClient.getAccessToken().getTokenValue());
+        return restTemplate.exchange(uri, HttpMethod.GET, null, String[].class);
     }
 }

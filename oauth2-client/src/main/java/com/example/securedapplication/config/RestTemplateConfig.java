@@ -4,6 +4,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
@@ -23,8 +24,9 @@ public class RestTemplateConfig {
                     token.getAuthorizedClientRegistrationId(),
                     token.getName());
 
-            httpRequest.getHeaders().add(HttpHeaders.AUTHORIZATION, "Bearer"
+            httpRequest.getHeaders().add(HttpHeaders.AUTHORIZATION, "Bearer "
                     + client.getAccessToken().getTokenValue());
+            httpRequest.getHeaders().setContentType(MediaType.APPLICATION_JSON);
 
             return execution.execute(httpRequest, bytes);
         }).build();
