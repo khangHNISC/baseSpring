@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class BidirectionalOneToManyTest extends BaseJpaH2Test {
 
@@ -29,6 +30,12 @@ class BidirectionalOneToManyTest extends BaseJpaH2Test {
     void testAdd() {
         Employee saved = em.persistAndFlush(admin);
         assertFalse(saved.getRoles().isEmpty());
+    }
+
+    @Test
+    void addRoleWithNullEmployee() {
+        Role adminRole = em.persistFlushFind(new Role("admin"));
+        assertNull(adminRole.employee);
     }
 
     @Entity
@@ -74,6 +81,10 @@ class BidirectionalOneToManyTest extends BaseJpaH2Test {
         public Role(String name, Employee employee) {
             this.name = name;
             this.employee = employee;
+        }
+
+        public Role(String name) {
+            this.name = name;
         }
 
         @Override
