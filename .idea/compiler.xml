@@ -15,6 +15,7 @@
         <module name="jooq-examples" />
         <module name="design-pattern" />
         <module name="library" />
+        <module name="authen_module" />
         <module name="spring-jdbc-examples" />
         <module name="application" />
         <module name="spring-kafka-examples" />
@@ -24,6 +25,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="authen-modules" target="8" />
+      <module name="authen_module" target="8" />
       <module name="graphql" target="1.8" />
       <module name="jpa-examples" target="1.8" />
       <module name="oauth2-server" target="1.8" />

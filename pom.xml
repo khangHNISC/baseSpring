@@ -20,6 +20,7 @@
         <module>jooq-examples</module>
         <module>library</module>
         <module>design-pattern</module>
+        <module>authen_module</module>
     </modules>
 
 </project>

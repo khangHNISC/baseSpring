@@ -25,6 +25,11 @@
         <option value="$PROJECT_DIR$/oauth2-authorization-server/pom.xml" />
         <option value="$PROJECT_DIR$/oauth2-resource-server/pom.xml" />
         <option value="$PROJECT_DIR$/graphql-examples/pom.xml" />
+        <option value="$PROJECT_DIR$/authen_module/oauth2-authorization-server/pom.xml" />
+        <option value="$PROJECT_DIR$/authen-modules/oauth2-authorization-server/pom.xml" />
+        <option value="$PROJECT_DIR$/authen-modules/oauth2-client/pom.xml" />
+        <option value="$PROJECT_DIR$/authen-modules/oauth2-resource-server/pom.xml" />
+        <option value="$PROJECT_DIR$/authen-modules/pom.xml" />
       </list>
     </option>
   </component>
