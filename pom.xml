@@ -20,7 +20,8 @@
         <module>jooq-examples</module>
         <module>library</module>
         <module>design-pattern</module>
-        <module>authen_module</module>
+        <module>authen-modules</module>
+        <module>auto-config-examples</module>
     </modules>
 
 </project>

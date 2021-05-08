@@ -1,0 +1,46 @@
+@SpringBootApplication = SpringBootConfiguration, ComponentScan, EnableAutoConfiguration
+without @component, @ComponentScan wont pick up that class
+
+user configuration = @ComponentScan
+
+     1. This is Java Config
+     2. Can Use Resource Config for Old XML
+
+auto configuration = @EnableAutoConfiguration
+
+    1. Look for all auto config from spring -factories
+    2. This Config may or may not have Condition
+
+Scenario:
+
+    1. Create Bean for a component (@Bean s injected into @Component)
+    2. Basic auto Config with spring-factories
+
+             what happen if we run hello-app with dependency on hello-starter
+             (spring.main.allow-bean-definition-overriding=true)
+
+             spring will let auto config override bean definition of user config
+
+    3. Better Auto Config
+
+              ConditionalOnClass (for configuration level)
+                    -> if class present -> then run this config
+
+              ConditionalOnMissingBean
+                    -> if there is bean present -> do not create the bean
+
+              => stop auto config override user config in hello-app
+
+    4. Customize User config using yaml
+
+               1. create POJO with @ConfigurationProperties
+
+               2. Inject The Property into The Bean with @EnableConfigurationProperties
+                        The properties only kick in if the conditional on configuration
+                        class correct for that configure bean (helloService)
+
+               3. Add config on hello-app in yaml
+
+@ConditionalOnBean -> additional config
+@ConditionalOnMissingClass -> rudimentary version
+@ConditionalOnProperty

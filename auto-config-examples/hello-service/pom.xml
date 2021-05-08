@@ -6,10 +6,11 @@
         <artifactId>base</artifactId>
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>authen-modules</artifactId>
+    <artifactId>hello-service</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

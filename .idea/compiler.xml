@@ -8,30 +8,32 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="base (1) (com.example)" />
+        <module name="hello-starter" />
         <module name="oauth2-client" />
+        <module name="hello-app" />
         <module name="jooq-exmaples" />
         <module name="spring-jpa-examples" />
         <module name="graphql-examples" />
         <module name="jooq-examples" />
         <module name="design-pattern" />
         <module name="library" />
-        <module name="authen_module" />
         <module name="spring-jdbc-examples" />
         <module name="application" />
+        <module name="hello-service" />
         <module name="spring-kafka-examples" />
         <module name="oauth2-authorization-server" />
+        <module name="authen-modules" />
         <module name="oauth2-resource-server" />
         <module name="application-modular-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="authen-modules" target="8" />
-      <module name="authen_module" target="8" />
       <module name="graphql" target="1.8" />
       <module name="jpa-examples" target="1.8" />
       <module name="oauth2-server" target="1.8" />
       <module name="secured_application" target="1.8" />
       <module name="spring-data-examples" target="1.8" />
+      <module name="untitled" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -41,6 +43,7 @@
       <module name="base (1) (com.example)" options="-parameters" />
       <module name="graphql" options="-parameters" />
       <module name="graphql-examples" options="-parameters" />
+      <module name="hello-app" options="-parameters" />
       <module name="jooq-examples" options="-parameters" />
       <module name="jooq-exmaples" options="-parameters" />
       <module name="library" options="-parameters" />
