@@ -13,9 +13,15 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(HelloProperties.class)
 public class HelloAutoConfiguration {
 
+    private final HelloProperties properties;
+
+    public HelloAutoConfiguration(HelloProperties properties) {
+        this.properties = properties;
+    }
+
     @Bean
     @ConditionalOnMissingBean
-    public HelloService helloService(HelloProperties properties) {
+    public HelloService helloService() {
         return new ConsoleHelloService(properties.getPrefix(),
                 properties.getSuffix());
     }
