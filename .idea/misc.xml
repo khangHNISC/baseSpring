@@ -29,7 +29,6 @@
         <option value="$PROJECT_DIR$/authen-modules/oauth2-authorization-server/pom.xml" />
         <option value="$PROJECT_DIR$/authen-modules/oauth2-client/pom.xml" />
         <option value="$PROJECT_DIR$/authen-modules/oauth2-resource-server/pom.xml" />
-        <option value="$PROJECT_DIR$/authen-modules/pom.xml" />
         <option value="$PROJECT_DIR$/auto-config-examples/hello-app/pom.xml" />
         <option value="$PROJECT_DIR$/demo-conifg-inside/foxpay-inside-admin/pom.xml" />
         <option value="$PROJECT_DIR$/auto-config-examples/demo-conifg-inside/pom.xml" />
