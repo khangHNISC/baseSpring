@@ -11,23 +11,29 @@
         <module name="hello-starter" />
         <module name="oauth2-client" />
         <module name="hello-app" />
+        <module name="demoInside2" />
         <module name="jooq-exmaples" />
         <module name="spring-jpa-examples" />
         <module name="graphql-examples" />
         <module name="jooq-examples" />
         <module name="design-pattern" />
+        <module name="foxpay-inside-admin" />
         <module name="library" />
         <module name="spring-jdbc-examples" />
         <module name="application" />
         <module name="hello-service" />
         <module name="spring-kafka-examples" />
         <module name="oauth2-authorization-server" />
+        <module name="foxpay-common-service" />
         <module name="authen-modules" />
         <module name="oauth2-resource-server" />
         <module name="application-modular-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo-conifg-inside" target="8" />
+      <module name="demoInside2" target="1.8" />
+      <module name="foxpay-inside-admin" target="1.8" />
       <module name="graphql" target="1.8" />
       <module name="jpa-examples" target="1.8" />
       <module name="oauth2-server" target="1.8" />
@@ -41,6 +47,8 @@
       <module name="application" options="-parameters" />
       <module name="application-modular-service" options="-parameters" />
       <module name="base (1) (com.example)" options="-parameters" />
+      <module name="demoInside2" options="-parameters" />
+      <module name="foxpay-inside-admin" options="-parameters" />
       <module name="graphql" options="-parameters" />
       <module name="graphql-examples" options="-parameters" />
       <module name="hello-app" options="-parameters" />
