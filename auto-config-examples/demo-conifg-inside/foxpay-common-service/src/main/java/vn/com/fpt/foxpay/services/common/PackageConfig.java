@@ -1,7 +1,5 @@
 package vn.com.fpt.foxpay.services.common;
 
-import io.github.jhipster.config.JHipsterProperties;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -9,5 +7,9 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class PackageConfig {
+    final SomeRepository someRepository;
 
+    public PackageConfig(SomeRepository someRepository) {
+        this.someRepository = someRepository;
+    }
 }
