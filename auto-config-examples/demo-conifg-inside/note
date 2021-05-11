@@ -1,0 +1,16 @@
+1. @ComponentScan along with @SpringBootApplication
+
+       + @ComponentScan override base package scan of @SpringBootApplication
+       + WebMvcTest pick up dependencies under package listed on @ComponentScan
+
+Recommend: remove @ComponentScan and use @SpringBootApplication
+            The exclude filter will be missing on @SpringBootApplication
+
+2. @WebMvcTest
+        + load everything if not listed under controllers
+        + load @ControllerAdvice even not listed under controllers
+
+Recommend:
+        1. using Configuration Properties to control @ControllerAdvice or Security Config
+        2. use controllers to specify needed test one
+        3. Using properties for setup Configuration Properties

@@ -7,9 +7,4 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class PackageConfig {
-    final SomeRepository someRepository;
-
-    public PackageConfig(SomeRepository someRepository) {
-        this.someRepository = someRepository;
-    }
 }

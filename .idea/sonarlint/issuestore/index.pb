@@ -194,9 +194,3 @@ Zauto-config-examples/hello-app/src/main/java/com/example/helloapp/HelloAppAppli
 ]auto-config-examples/hello-app/src/main/java/com/example/helloapp/HelloCommandLineRunner.java,b/9/b9f3dd89414a9bbb39999ef4345e0cf85bebd3c8
 I
 auto-config-examples/note,d/d/ddf5b555f76a169aac503d16c0177a20969b0a9e
-ê
-`auto-config-examples/hello-starter/src/main/java/hello/autoconfigure/HelloAutoConfiguration.java,0/6/0654bcadd3dc6dbb79670a2751dd429ed96ee462
-Z
-*auto-config-examples/hello-starter/pom.xml,9/b/9b0f0ad6893fb85fcec96727f1da307427550ecd
-â
-Yauto-config-examples/hello-starter/src/main/java/hello/autoconfigure/HelloProperties.java,c/a/ca36ac9687fbb58bcff7188b0d45efbee5183829
