@@ -22,7 +22,6 @@
         <module>design-pattern</module>
         <module>authen-modules</module>
         <module>auto-config-examples</module>
-        <module>demo-conifg-inside</module>
     </modules>
 
 </project>
