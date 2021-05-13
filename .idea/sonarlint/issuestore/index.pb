@@ -230,5 +230,3 @@ Rdesign-pattern/src/main/java/com/example/pattern/abstract_factory/BtcStrategy.j
 adesign-pattern/src/test/java/com/example/pattern/abstract_factory/BitCoinStrategyFactoryTest.java,9/3/93e0f76d6f7513269a06086927b68e4945fa1706
 Œ
 \design-pattern/src/test/java/com/example/pattern/strategy_pattern/NormalFlyableDuckTest.java,3/0/30b3669edd023c5a4c054d349e54abbb5370308c
-…
-Udesign-pattern/src/main/java/com/example/pattern/strategy_pattern/behavior/NoFly.java,b/e/be8646b881b7e574d7c8091b3b514f85624cf0c7

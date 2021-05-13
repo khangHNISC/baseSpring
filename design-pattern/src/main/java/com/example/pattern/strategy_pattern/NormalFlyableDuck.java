@@ -1,7 +1,9 @@
 package com.example.pattern.strategy_pattern;
 
 import com.example.pattern.strategy_pattern.behavior.FlyBehavior;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class NormalFlyableDuck extends Duck {
 
     public NormalFlyableDuck(FlyBehavior flyBehavior) {
@@ -10,6 +12,6 @@ public class NormalFlyableDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.println("display normal ducks");
+        log.info("display normal ducks");
     }
 }
