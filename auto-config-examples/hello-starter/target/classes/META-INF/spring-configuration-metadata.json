@@ -10,12 +10,14 @@
     {
       "name": "hello.prefix",
       "type": "java.lang.String",
-      "sourceType": "hello.autoconfigure.HelloProperties"
+      "sourceType": "hello.autoconfigure.HelloProperties",
+      "defaultValue": "Hello"
     },
     {
       "name": "hello.suffix",
       "type": "java.lang.String",
-      "sourceType": "hello.autoconfigure.HelloProperties"
+      "sourceType": "hello.autoconfigure.HelloProperties",
+      "defaultValue": "!"
     }
   ],
   "hints": []

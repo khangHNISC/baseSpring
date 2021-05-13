@@ -22,11 +22,17 @@ class BidirectionalOneToOneTest extends BaseJpaH2Test {
         assertThrows(PersistenceException.class, () -> em.persistAndFlush(info2));
     }
 
-    @Test
-    void optionalFalseOneToOne() {
+  /*  @Test
+    void optionalFalseOneToOneMandatoryChild() {
         //non null relationship is required
         User kien = new User("Kien");
         assertThrows(PersistenceException.class, () -> em.persistFlushFind(kien));
+    }*/
+
+    @Test
+    void optionalFalseOneMandatoryParent() {
+        ContactInfo info1 = new ContactInfo("downtown");
+        assertThrows(PersistenceException.class, () -> em.persistAndFlush(info1));
     }
 
     @Entity
@@ -54,7 +60,7 @@ class BidirectionalOneToOneTest extends BaseJpaH2Test {
         }
     }
 
-    @Entity(name = "BidirectionalOneToOneTest$ContactInfo")
+    @Entity
     @NoArgsConstructor
     private static class ContactInfo {
         @Id
@@ -63,7 +69,7 @@ class BidirectionalOneToOneTest extends BaseJpaH2Test {
 
         String address;
 
-        @OneToOne
+        @OneToOne(optional = false)
         @JoinColumn(name = "user_id", unique = true)
         //this will specify foreign key
         private User user;

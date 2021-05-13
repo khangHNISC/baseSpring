@@ -43,7 +43,7 @@ class TestJOOQ {
         assertNotNull(create);
 
         List<MyCup> cups = create.select().from(CUP).where(CUP.AGE.eq("100")).fetchInto(MyCup.class);
-        System.out.println(cups.toString());
+        System.out.println(cups);
         assertFalse(cups.isEmpty());
     }
 

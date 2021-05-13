@@ -51,18 +51,6 @@ public class HelloAutoConfigurationTest {
         this.output.expect(containsString("Mine Works**"));
     }
 
-    @Test
-    public void defaultServiceIsNotAutoConfiguredIfPrefixIsMissing() {
-        load(EmptyConfiguration.class);
-        assertThat(this.context.getBeansOfType(HelloService.class)).isEmpty();
-    }
-
-    @Test
-    public void defaultServiceIsNotAutoConfiguredWithWrongPrefix() {
-        load(EmptyConfiguration.class, "hello.prefix=invalid");
-        assertThat(this.context.getBeansOfType(HelloService.class)).isEmpty();
-    }
-
     private void load(Class<?> config, String... environment) {
         AnnotationConfigApplicationContext ctx =
                 new AnnotationConfigApplicationContext();
