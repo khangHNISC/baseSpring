@@ -22,6 +22,7 @@
         <module>design-pattern</module>
         <module>authen-modules</module>
         <module>auto-config-examples</module>
+        <module>spring-session-example</module>
     </modules>
 
 </project>

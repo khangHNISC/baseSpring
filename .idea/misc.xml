@@ -33,6 +33,7 @@
         <option value="$PROJECT_DIR$/demo-conifg-inside/foxpay-inside-admin/pom.xml" />
         <option value="$PROJECT_DIR$/auto-config-examples/demo-conifg-inside/pom.xml" />
         <option value="$PROJECT_DIR$/auto-config-examples/demo-conifg-inside/foxpay-inside-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-session-example/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

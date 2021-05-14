@@ -17,5 +17,6 @@
     <file url="file://$PROJECT_DIR$/spring-jdbc-examples/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-jpa-examples/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-kafka-examples/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-session-example/src/main/java" charset="UTF-8" />
   </component>
 </project>
