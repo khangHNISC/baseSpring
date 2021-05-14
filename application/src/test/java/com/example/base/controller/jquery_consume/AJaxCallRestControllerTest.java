@@ -16,6 +16,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * the rest docs require:
+ *      1. run the test -> create snippets
+ *      2. mvn clean package -> create html in generated-docs
+ */
 @WebMvcTest
 @AutoConfigureRestDocs(outputDir = "target/snippets") //for rest doc only
 class AJaxCallRestControllerTest {

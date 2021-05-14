@@ -1,4 +1,4 @@
-= Getting Started With Spring REST Docs
+= Getting Started With Spring REST Docz
 
 This is an example output for a service running at http://localhost:8080:
 
