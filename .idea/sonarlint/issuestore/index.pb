@@ -2,8 +2,6 @@
 m
 =library/src/main/java/com/example/base/service/MyService.java,d/6/d680a85e70f7d603a2afcb200a7f6e7419467112
 z
-Japplication/src/main/java/com/example/base/controller/HelloController.java,2\b\2b3c0194db0a8f5f166db1235d28fcd84168dfae
-z
 Jlibrary/src/main/java/com/example/base/common/annotation/ValueAllowed.java,f/1/f1af569411898f8b50513cb7fa7fdd47ae047238
 {
 Klibrary/src/main/java/com/example/base/common/annotation/ValuesAllowed.java,7/4/7485228b4d8efcc71a29f7075a26ddcb25b9627c
@@ -23,8 +21,6 @@ u
 Elibrary/src/main/java/com/example/base/common/annotation/EndDate.java,a/3/a3d74bf074b35d8f6e01185ce6fe0745ad050356
 g
 7library/src/main/java/com/example/base/caching/DTO.java,5/9/59054a907699f822710df490b71defda35b73cae
-s
-Clibrary/src/test/java/com/example/base/LibraryApplicationTests.java,e/c/ec22005e1299456219e6dfe5f8dc1b1f6fc00704
 ò
 hspring-jpa-examples/src/test/java/com/example/base/hibernate/projection/ProjectionWithNativeSQLTest.java,f/a/fa460f08b172e122c33b2f2a1ba265e97ee1a603
 ì
@@ -82,10 +78,6 @@ Uspring-jdbc-examples/src/test/java/com/example/springjdbcexamples/BaseJdbcH2Tes
 Xspring-jpa-examples/src/test/java/com/example/base/streamable/ProductRepositoryTest.java,e/4/e4b4e521d3c3d00d0a2c9834033c9ac1fab7f74d
 ±
 Äspring-jpa-examples/src/test/java/com/example/base/hibernate/association/many_to_many/BidirectionalManyToManyLinkEntityTest.java,1/1/118fdd1e0f725a207134ae71ed54ed780d37f349
-ê
-`application/src/main/java/com/example/base/controller/jquery_consume/AJaxCallRestController.java,2/8/281c311d3352975807e7856e3d28698a1f454072
-p
-@application/src/test/java/com/example/base/ApplicationTests.java,a/b/ab3cab031710058cc3d42da5b86e0f99f3b10e49
 z
 Japplication/src/main/java/com/example/base/common/config/WebMVCConfig.java,1\5\15fed96eae71b69f1b388ac2c51bd9906d554e31
 9
@@ -210,8 +202,6 @@ sspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to
 espring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to_one/BestOToOTest.java,8/5/8532fb410b82698bac33bb7eea50ac4fa0c449f5
 î
 dauto-config-examples/hello-starter/src/test/java/hello/autoconfigure/HelloAutoConfigurationTest.java,7/c/7c80dc56087e147d75561cd8ec40449dbde82e6b
-F
-design-pattern/pom.xml,b/3/b39a8ea20be98deed1c06591378d54f5b6a61216
 x
 Hdesign-pattern/src/test/java/com/example/pattern/CucumberRunnerTest.java,2/b/2b9eba14307d8c848c4555bcca30ef9280c633c5
 {
@@ -238,8 +228,6 @@ Zapplication/src/main/java/com/example/base/controller/binding/BindingResultCont
 Tapplication/src/main/java/com/example/base/controller/caching/CachingController.java,c/9/c94943f8e870840fd743633bce38aabf71f36611
 Ç
 Rapplication/src/main/java/com/example/base/controller/flow_get/WebController1.java,d/6/d652b5fb0931da113f21010766cd906410163997
-k
-;application/src/main/java/com/example/base/Application.java,0/7/078637dbc445c497e5e1972ef52506b45bca5225
 ¶
 vauthen-modules/oauth2-resource-server/src/main/java/com/example/oauth2resourceserver/controller/PrivateController.java,d/c/dc37638e1c6d32d296b504a668b60577d2c1c611
 Ñ
@@ -250,8 +238,6 @@ tspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to
 rspring-jpa-examples/src/test/java/com/example/base/hibernate/association/one_to_one/BidirectionalOneToOneTest.java,9/d/9d80a529c8e98aa85e63b4d32cc7a019e58d888d
 N
 spring-session-example/HELP.md,9/2/92b801feab88aba364cbe428102f2e6a1cac8055
-?
-library/pom.xml,b/8/b832e9e6aa69e04b36abe92d5f67292bdc0f32f1
 L
 spring-jdbc-examples/pom.xml,8/7/87f5d9b2f1dc75993190f294ab142d17a8e4edac
 M
@@ -262,3 +248,31 @@ ospring-kafka-examples/src/test/java/com/example/springkafka/simpleTest/SpringKa
 Yspring-kafka-examples/src/test/java/com/example/springkafka/simpleTest/KafkaConsumer.java,a/0/a05242337c79672b5f372d6307e062bda6149f9c
 y
 Ispring-jpa-examples/src/test/java/com/example/base/BaseTestContainer.java,6/1/611a60530868d2e1e9011b163b3af98074cc6704
+ñ
+fauthen-modules/oauth2-client/src/test/java/com/example/securedapplication/SecuredApplicationTests.java,0/1/011443b6715f8413da2b2d9534b4ebe654850889
+F
+authen-modules/pom.xml,0/5/05ca78df476a9682963b5eac2019214871c147ad
+Æ
+~authen-modules/oauth2-resource-server/src/test/java/com/example/oauth2resourceserver/Oauth2ResourceServerApplicationTests.java,1/8/18db5ec0040ca22cc67bc167d5809a5a2b1b75b8
+]
+-authen-modules/oauth2-resource-server/pom.xml,a/9/a99e12c521fb70ecfcfb9e999612ad0cb7f0b7a4
+O
+spring-session-example/mvnw.cmd,a/c/ac2994deb360d54426437b2e26d0abd09aecae12
+T
+$authen-modules/oauth2-client/pom.xml,0/0/0020a381f438114f636985e808d828a9fdb2f292
+D
+application/mvnw.cmd,e/2/e2b2491fd83f046c1da2682641a27968d50559b1
+?
+library/pom.xml,b/8/b832e9e6aa69e04b36abe92d5f67292bdc0f32f1
+s
+Clibrary/src/test/java/com/example/base/LibraryApplicationTests.java,e/c/ec22005e1299456219e6dfe5f8dc1b1f6fc00704
+ï
+espring-session-example/src/test/java/com/example/springsessionexample/AbstractRedisTestContainer.java,8/4/8470df29d02a177daa46ac44f86682fd574f4014
+ü
+ospring-session-example/src/test/java/com/example/springsessionexample/SpringSessionExampleApplicationTests.java,4/a/4a65135c792eb35284c649b453f808c6ccae90b9
+S
+#application-modular-service/pom.xml,9/0/90e32660a21353ee193c3fa857a53d4ecbd24362
+N
+spring-session-example/pom.xml,4/f/4f7fb0a14f00a1ba9202a80e657525e3f7d23507
+ö
+jspring-session-example/src/main/java/com/example/springsessionexample/SpringSessionExampleApplication.java,3/8/3836d68e10fd31063a3b3f6ec8f265f7da2b1a27

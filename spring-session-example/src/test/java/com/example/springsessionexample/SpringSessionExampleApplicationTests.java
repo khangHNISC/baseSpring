@@ -31,7 +31,6 @@ class SpringSessionExampleApplicationTests extends AbstractRedisTestContainer {
                 .consumeWith(
                         response ->
                                 assertThat(response.getResponseBody()).isNotNull()
-
                 );
     }
 }
