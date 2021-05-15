@@ -1,18 +1,10 @@
 
-m
-=library/src/main/java/com/example/base/service/MyService.java,d/6/d680a85e70f7d603a2afcb200a7f6e7419467112
 z
 Jlibrary/src/main/java/com/example/base/common/annotation/ValueAllowed.java,f/1/f1af569411898f8b50513cb7fa7fdd47ae047238
 {
 Klibrary/src/main/java/com/example/base/common/annotation/ValuesAllowed.java,7/4/7485228b4d8efcc71a29f7075a26ddcb25b9627c
 |
 Llibrary/src/main/java/com/example/base/common/enummeration/CurrencyUnit.java,c/8/c84b8a87423eebe4a90f52e101f00b9bf20f78a2
-u
-Elibrary/src/main/java/com/example/base/service/ServiceProperties.java,9/0/90fa3b366bfa9c9a97c58e1974dfc4e1feb8e49f
-à
-Xlibrary/src/main/java/com/example/base/common/formatter/CurrencyAnnotationFormatter.java,6/3/639f5face371d52235ec834bf18546f5dda1042f
-Ñ
-Tlibrary/src/main/java/com/example/base/common/formatter/LocaleCurrencyFormatter.java,2/1/2147ded19b7cac38a84d03c72c654882e74d81c0
 |
 Llibrary/src/main/java/com/example/base/common/annotation/CurrencyFormat.java,f/f/ffe8b9c9f2800e91677d06157fa9453945cae52a
 w
@@ -62,8 +54,6 @@ Vapplication/src/main/java/com/example/base/common/conversion/EnumConverterFacto
 Zapplication/src/main/java/com/example/base/common/conversion/ConditionalEnumConverter.java,5/1/5107b0c0d64cc88ddf030d941a9031e4d8eefc0c
 x
 Hlibrary/src/main/java/com/example/base/common/annotation/EnumFromId.java,6/b/6b948ee79d25f2e9bf147ec1506e1a262008f281
-z
-Jlibrary/src/main/java/com/example/base/common/enummeration/SimpleEnum.java,9\7\9760d82e517dda65a2739ccefba6fafd599a3aa6
 s
 Clibrary/src/main/java/com/example/base/service1/AdvanceGetForm.java,2/6/26a133ecdd1b73785a383dce72c168f160187dd7
 á
@@ -82,8 +72,6 @@ z
 Japplication/src/main/java/com/example/base/common/config/WebMVCConfig.java,1\5\15fed96eae71b69f1b388ac2c51bd9906d554e31
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-E
-jooq-examples/pom.xml,0\a\0a96c00c258d903b966c7ee6b4f5e34f899e136b
 Ç
 Rdesign-pattern/src/main/java/com/example/pattern/abstract_factory/BitCoinEnum.java,7/5/756c105e9dcd09b5596762107663273e2df6f343
 ç
@@ -166,8 +154,6 @@ Oauto-config-examples/hello-service/src/main/java/hello/ConsoleHelloService.java
 Wauto-config-examples/hello-service/src/main/java/hello/InvalidHelloPrefixException.java,4/0/4043500539bfe0cb6d709031882db3e74a0b600a
 É
 Sdesign-pattern/src/main/java/com/example/pattern/abstract_factory/BakeStrategy.java,8/b/8beafc11689196520b40021ccde4a0921a10a7ca
-r
-Blibrary/src/main/java/com/example/base/caching/CachingService.java,8/9/89f5ca2c56026a25964e41e73dfa2ccf5b77fc09
 é
 ^design-pattern/src/main/java/com/example/pattern/abstract_factory/AbstractStrategyFactory.java,4/f/4fdaa496c88c027dad71a7c2b60062f7e2126860
 Ç
@@ -178,8 +164,6 @@ Udesign-pattern/src/main/java/com/example/pattern/abstract_factory/CryptoStrateg
 Sdesign-pattern/src/main/java/com/example/pattern/abstract_factory/CakeStrategy.java,3/7/3773cd2a2146dab89672d512e10da81236da0b38
 Ç
 Rdesign-pattern/src/main/java/com/example/pattern/abstract_factory/BtcStrategy.java,d/b/db90529ac9be1910490b42f924f52c48072047fa
-å
-\design-pattern/src/test/java/com/example/pattern/strategy_pattern/NormalFlyableDuckTest.java,3/0/30b3669edd023c5a4c054d349e54abbb5370308c
 Ü
 Vdesign-pattern/src/main/java/com/example/pattern/observer_pattern/subject/Subject.java,1/f/1fae832943d035528c7411273a67e56d7374c52c
 à
@@ -262,10 +246,6 @@ T
 $authen-modules/oauth2-client/pom.xml,0/0/0020a381f438114f636985e808d828a9fdb2f292
 D
 application/mvnw.cmd,e/2/e2b2491fd83f046c1da2682641a27968d50559b1
-?
-library/pom.xml,b/8/b832e9e6aa69e04b36abe92d5f67292bdc0f32f1
-s
-Clibrary/src/test/java/com/example/base/LibraryApplicationTests.java,e/c/ec22005e1299456219e6dfe5f8dc1b1f6fc00704
 ï
 espring-session-example/src/test/java/com/example/springsessionexample/AbstractRedisTestContainer.java,8/4/8470df29d02a177daa46ac44f86682fd574f4014
 ü
@@ -276,3 +256,9 @@ N
 spring-session-example/pom.xml,4/f/4f7fb0a14f00a1ba9202a80e657525e3f7d23507
 ö
 jspring-session-example/src/main/java/com/example/springsessionexample/SpringSessionExampleApplication.java,3/8/3836d68e10fd31063a3b3f6ec8f265f7da2b1a27
+z
+Japplication/src/main/java/com/example/base/controller/HelloController.java,2/b/2b3c0194db0a8f5f166db1235d28fcd84168dfae
+k
+;application/src/main/java/com/example/base/Application.java,0/7/078637dbc445c497e5e1972ef52506b45bca5225
+ê
+`application/src/main/java/com/example/base/controller/jquery_consume/AJaxCallRestController.java,2/8/281c311d3352975807e7856e3d28698a1f454072

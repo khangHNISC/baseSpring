@@ -19,7 +19,6 @@
         <module name="jooq-examples" />
         <module name="design-pattern" />
         <module name="foxpay-inside-admin" />
-        <module name="library" />
         <module name="spring-jdbc-examples" />
         <module name="application" />
         <module name="hello-service" />
@@ -29,6 +28,17 @@
         <module name="authen-modules" />
         <module name="oauth2-resource-server" />
         <module name="application-modular-service" />
+      </profile>
+      <profile name="Annotation profile for base" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.2.Final/mapstruct-processor-1.4.2.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" />
+        </processorPath>
+        <module name="library" />
       </profile>
     </annotationProcessing>
   </component>
