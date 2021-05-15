@@ -47,3 +47,5 @@ Test demo Cucumber
 oauth2 - *** for authen + author flows with oauth2
 
 ---------------------------------------------------------------------------------------------
+
+rsocket -- https://spring.io/blog/2020/02/20/spring-tips-rsocket-and-spring-security
