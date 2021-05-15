@@ -14,8 +14,7 @@ A playground for Spring projects
 
 5: Caching => https://spring.io/guides/gs/caching/
 
-6: a Nghiệp làm: Security + @Secure t2/19/04
-
+6: Spring Session (include security + webflux+ testcontainer)
 
 ---------------------------------------------------------------------------------------------
 JPA in spring-jpa-examples
@@ -35,11 +34,16 @@ JOOQ in Jooq-examples test and spring-jdbc-examples in spring jdbc examples test
 
 GraphQL in grapl-examples
 
-
 ---------------------------------------------------------------------------------------------
 design - pattern for simple design pattern: noobslayervn
 
     1. abstrac-factory 
+    2. observer-pattern
+    3. strategy-patter
+
+Test demo Cucumber
 
 ---------------------------------------------------------------------------------------------
 oauth2 - *** for authen + author flows with oauth2
+
+---------------------------------------------------------------------------------------------
