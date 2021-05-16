@@ -1,0 +1,12 @@
+CREATE TABLE CUP
+(
+    id   INT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    age VARCHAR(64) NOT NULL
+);
+
+INSERT INTO CUP
+VALUES (1, 'khang', '100');
+
+INSERT INTO CUP
+VALUES (2, '12', '12');

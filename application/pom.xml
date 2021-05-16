@@ -35,14 +35,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
-        <dependency>
+         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>spring-jpa-examples</artifactId>
+            <artifactId>library</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
             <optional>true</optional>
         </dependency>
         <dependency>
