@@ -1,0 +1,3 @@
+/health
+/beans (scope + dependency)
+/configprops (for @ConfigurationProperties)

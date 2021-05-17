@@ -84,6 +84,7 @@
                             <version>1.4.2.Final</version>
                         </path>
                     </annotationProcessorPaths>
+                    <proc>none</proc> <!-- this fr auto config work with ASPECT (???) -->
                 </configuration>
             </plugin>
         </plugins>
