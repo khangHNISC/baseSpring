@@ -8,6 +8,6 @@ public class MyStepDefinition {
 
     @Then("^They should equals$")
     public void one_equals_one() {
-        assertEquals(1, 1);
+
     }
 }
