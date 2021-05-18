@@ -1,6 +1,6 @@
 package com.example.async;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,11 +13,11 @@ import java.util.concurrent.Executor;
 
 @RestController
 @SpringBootApplication
+@RequiredArgsConstructor
 @EnableAsync(proxyTargetClass = true)
 public class AsyncApplication {
 
-    @Autowired
-    SomeService service;
+    private final SomeService service;
 
     public static void main(String[] args) {
         SpringApplication.run(AsyncApplication.class, args);

@@ -1,30 +1,21 @@
 package com.example.async;
 
-import org.springframework.scheduling.annotation.Async;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
  * Created by khangld5 on May 18, 2021
  */
+@Slf4j
 @Service
+@RequiredArgsConstructor
 public class SomeService {
 
-    @Async
+    private final AsyncStuff asyncStuff;
+
     public String compute() throws InterruptedException {
-        pushNoti();
-        pushNoti2();
+        asyncStuff.pushNoti();
         return "hello";
-    }
-
-    @Async
-    public void pushNoti() throws InterruptedException {
-        System.out.println("im running");
-        Thread.sleep(10000);
-    }
-
-    @Async
-    public void pushNoti2() throws InterruptedException {
-        System.out.println("im running2");
-        Thread.sleep(10000);
     }
 }
