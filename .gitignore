@@ -1,3 +1,6 @@
 /.idea/
-/target/
 /.idea/sonarlint/
+target/
+*.iml
+*.class
+
