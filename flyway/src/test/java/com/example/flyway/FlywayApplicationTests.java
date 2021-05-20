@@ -1,5 +1,7 @@
 package com.example.flyway;
 
+import com.example.flyway.core.Cup;
+import com.example.flyway.core.CupRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
