@@ -23,7 +23,6 @@ class ReconcileEMConfig {
     LocalContainerEntityManagerFactoryBean entityManagerFactory(
             DataSource dataSource,
             EntityManagerFactoryBuilder builder) {
-
         return builder
                 .dataSource(dataSource)
                 .packages("com.example.flyway.reconcile")
