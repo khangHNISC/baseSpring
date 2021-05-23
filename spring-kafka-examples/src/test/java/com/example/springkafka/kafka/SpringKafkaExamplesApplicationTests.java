@@ -1,4 +1,4 @@
-package com.example.springkafka.simpleTest;
+package com.example.springkafka.kafka;
 
 import com.example.springkafka.Foo1;
 import org.junit.jupiter.api.Test;
