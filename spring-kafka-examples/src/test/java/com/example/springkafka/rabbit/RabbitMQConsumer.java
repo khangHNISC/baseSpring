@@ -1,21 +1,19 @@
 package com.example.springkafka.rabbit;
 
+import com.rabbitmq.client.Channel;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.stereotype.Component;
+import org.springframework.amqp.support.AmqpHeaders;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.messaging.handler.annotation.Header;
 
-import java.util.concurrent.CountDownLatch;
+import java.io.IOException;
 
-@Component
+@TestConfiguration
 public class RabbitMQConsumer {
-    private final CountDownLatch latch = new CountDownLatch(1);
 
     @RabbitListener(id = "foo", queues = "spring-boot")
-    public void receiveMessage(String message) {
+    public void receiveMessage(String message, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
         System.out.println("Received <" + message + ">");
-        latch.countDown();
-    }
-
-    public CountDownLatch getLatch() {
-        return latch;
+        channel.basicAck(tag, false);
     }
 }

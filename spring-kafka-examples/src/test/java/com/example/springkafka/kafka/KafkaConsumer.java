@@ -2,13 +2,13 @@ package com.example.springkafka.kafka;
 
 import com.example.springkafka.Foo2;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.stereotype.Component;
 
 import java.util.concurrent.CountDownLatch;
 
 @Slf4j
-@Component
+@TestConfiguration
 class KafkaConsumer {
 
     private final CountDownLatch latch = new CountDownLatch(1);
