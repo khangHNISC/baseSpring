@@ -2,9 +2,6 @@ package com.example.base;
 
 import com.example.base.service.Reservation;
 import com.example.base.service.ReservationClient;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +31,14 @@ class TestForConsumer {
 
     @Test
     void getAllReservationUsingFeign() {
-        Reservation a = client.findAll();
+        Reservation a = client.findOne();
+        Assertions.assertNotNull(a);
+        assertEquals("Jane", a.getName());
+    }
+
+    @Test
+    void fallback_IfServerUnResponse() {
+        Reservation a = client.getBookedReservation();
         Assertions.assertNotNull(a);
         assertEquals("Jane", a.getName());
     }
