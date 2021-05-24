@@ -6,7 +6,7 @@ Contract.make {
     description "should return all Reservations"
     request {
         method GET()
-        url("/reservations")
+        url("/reservation")
     }
     response {
         status 200

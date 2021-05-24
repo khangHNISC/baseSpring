@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ReservationController {
 
-    @GetMapping(value = "/reservations", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/reservation", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Reservation> getAllReservation() {
         return ResponseEntity.ok(new Reservation(1, "Jane"));
     }
