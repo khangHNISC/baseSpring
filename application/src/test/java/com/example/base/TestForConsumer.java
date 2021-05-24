@@ -12,7 +12,11 @@ import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest(properties = "feign.hystrix.enabled=true")
+@SpringBootTest(properties = {
+        "feign.circuitbreaker.enabled=true",
+        "feign.client.config.default.connectTimeout=5000",
+        "feign.client.config.default.readTimeout=5000"
+})
 @AutoConfigureStubRunner(ids = "com.example:application-modular-service:+:8080",
         stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 class TestForConsumer {
@@ -36,6 +40,9 @@ class TestForConsumer {
         assertEquals("Jane", a.getName());
     }
 
+    /**
+     * before doing with dependency please check the correct version first !!!
+     */
     @Test
     void fallback_IfServerUnResponse() {
         Reservation a = client.getBookedReservation();
