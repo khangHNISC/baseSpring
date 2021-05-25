@@ -1,0 +1,22 @@
+1. mvn spring-boot:run
+2. mvn compile = execute goal + gen class
+   mvn package = execute package goal -> build jar
+   java -jar target/gs-maven-0.1.0.jar
+
+3 containerized
+   --run and remove
+   docker run -p 8080:8080 --rm -it $(docker build -q .)
+
+    run
+        -p: port binding
+        --rm: remove container after use
+        -it: set up interactive bash shell
+
+    build
+        -q: auto gen tag instead of using build -t
+
+   docker rmi <image-id> <image-id>
+
+4. mvn to build image
+   ./mvnw spring-boot:build-image
+   -Dspring-boot.build-image.imageName=spring-boot-docker
