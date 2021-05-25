@@ -24,6 +24,7 @@
         <module>auto-config-examples</module>
         <module>spring-session-example</module>
         <module>rsocket-example</module>
+        <module>spring-docker</module>
     </modules>
 
 </project>
