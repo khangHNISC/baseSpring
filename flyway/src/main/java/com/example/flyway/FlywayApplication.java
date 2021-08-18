@@ -20,17 +20,6 @@ class FlywayApplication {
         SpringApplication.run(FlywayApplication.class, args);
     }
 
-    /**
-     * fail attempt for run fly way script toward specific DB
-     * There is @FlywayDataSource but not working.
-     * set spring.flyway.url=jdbc:h2:mem:testdb for single data source only
-     */
-    @Bean
-    @ConfigurationProperties(prefix = "spring.datasource.url")
-    public DataSource dataSource() {
-        return DataSourceBuilder.create().build();
-    }
-
     @Bean
     public EntityManagerFactoryBuilder entityManagerFactoryBuilder() {
 

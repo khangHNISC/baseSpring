@@ -14,5 +14,6 @@ public class AsyncStuff {
     public void pushNoti() throws InterruptedException {
         log.info("im running");
         Thread.sleep(10000);
+        log.info("im done");
     }
 }
