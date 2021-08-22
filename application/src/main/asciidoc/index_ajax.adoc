@@ -1,6 +1,6 @@
 = Getting Started With Spring REST Docz
 
-This is an example output for a service running at http://localhost:8080:
+This is an example output for a service running at http://localhost:8080/ajax_api
 
 .request
 include::{snippets}/ajax_api/http-request.adoc[]
