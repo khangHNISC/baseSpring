@@ -37,7 +37,7 @@ GraphQL in grapl-examples
 ---------------------------------------------------------------------------------------------
 design - pattern for simple design pattern: noobslayervn
 
-    1. abstrac-factory 
+    1. abstract-factory 
     2. observer-pattern
     3. strategy-patter
 

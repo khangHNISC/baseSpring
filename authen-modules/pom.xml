@@ -16,4 +16,10 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <modules>
+        <module>oauth2-authorization-server</module>
+        <module>oauth2-client</module>
+        <module>oauth2-resource-server</module>
+    </modules>
+
 </project>
