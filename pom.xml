@@ -25,6 +25,12 @@
         <module>spring-session-example</module>
         <module>rsocket-example</module>
         <module>spring-docker</module>
+        <module>async</module>
+        <module>application-modular-service</module>
+        <module>flyway</module>
+        <module>graphql-examples</module>
+        <module>spring-batch</module>
+        <module>spring-websocket</module>
     </modules>
 
 </project>

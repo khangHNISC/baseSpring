@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>jooq-exmaples</artifactId>
+    <artifactId>jooq-examples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>jooq-examples</name>
     <description>Demo project for Spring Boot</description>
